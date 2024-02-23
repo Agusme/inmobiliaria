@@ -5,7 +5,7 @@ import Whatsapp from "../layouts/Whatsapp";
 const Home = () => {
   return (
     <div className=" w-100  text-white">
-<Fade>
+<Fade duration={1500}>
 <Container className="centered-container">
             <p className="fw-semibold text-center fs-3">¡Bienvenidos a Nuestra Inmobiliaria!</p>
 
@@ -14,10 +14,12 @@ const Home = () => {
             <p className="fs-5 text-center">
               Te ayudamos a encontrar el lugar que estas buscando
             </p>
-      </Container>
-      <Whatsapp></Whatsapp>
+            <Whatsapp></Whatsapp>
 
-</Fade>
+      </Container>
+      </Fade>
+
+
     </div>
   );
 };
