@@ -5,6 +5,8 @@ const Portada = () => {
 
 <Container fluid className="bg-white text-center">
   <Container className="py-5">
+    <p className="fw-semibold fs-1">Nosotros</p>
+    <p className="py-2">Somos una inmobiliaria de confianza en Tucumán con años de experiencia en el mercado inmobiliario. Nuestro equipo altamente capacitado está aquí para ayudarte en la compra, venta y alquier de propiedades. Brindamos un servicio profesional y personalizado para hacer realidad tus objetivos inmobiliarios.</p>
     <Row>
       <Col lg={4} md={4} sm={12}>
         <p className="fs-3 fw-semibold">
