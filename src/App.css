@@ -18,6 +18,65 @@ body {
 
 
 }
+.bg-image{
+  background-image: url("../src/assets/card.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: 25%;
+  height: 100vh; 
+  width: 100%;
+
+}
+.bg-imageCard1{
+  background-image: url("../src/assets/card1.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: 70%;
+  height: 100vh; 
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+
+
+}
+.bg-img:hover{
+  transform: scaleY(1.1);
+}
+
+.bg-imageCard2{
+  background-image: url("../src/assets/card2.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: 40%;
+  height: 100vh; 
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+
+}
+.bg-imageCard3{
+  background-image: url("../src/assets/card3.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: 30%;
+  height: 100vh; 
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+
+}
+.bg-contact{
+background-image: url("../src/assets/fondoContact.jpeg");
+background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: 0%;
+  height: 100vh; 
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+
+}
 
 .poppins-regular {
   font-family: "Poppins", sans-serif;
@@ -71,7 +130,6 @@ backdrop-filter: blur(5px);
   cursor: pointer;
   
 }
-
 
 
 

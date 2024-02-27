@@ -7,6 +7,7 @@ import {
   validatePhone,
 } from "../../helpers/validateForm.jsx";
 import emailjs from "@emailjs/browser";
+import { Fade } from "react-awesome-reveal";
 
 import React from "react";
 
@@ -54,9 +55,10 @@ const Contacto = () => {
   };
 
   return (
-    <div>
+    <Fade>
+  <div className="bg-contact text-white">
       <Container>
-        <p className="fw-semibold fs-1 text-center">Contacto</p>
+        <p className="fw-semibold fs-1 text-center pt-3">Contacto</p>
         <Form onSubmit={handleSubmit(onSubmit)}>
           <Form.Group controlId="formName">
             <Form.Label>
@@ -150,7 +152,7 @@ const Contacto = () => {
               </Form.Control.Feedback>
             )}
           </Form.Group>
-          <Button type="submit" className="mt-3 btn btn-dark">
+          <Button type="submit" className="mt-3 btn btn-light">
             Enviar
           </Button>
         </Form>
@@ -166,6 +168,8 @@ const Contacto = () => {
         </Modal>
       </Container>
     </div>
+    </Fade>
+  
   );
 };
 

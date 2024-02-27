@@ -4,6 +4,7 @@ import Home from "./components/views/Home";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Portada from "./components/views/Portada";
 import Contacto from "./components/views/Contacto";
+import Footer from "./components/layouts/Footer";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Home></Home>
       <Portada></Portada>
       <Contacto></Contacto>
+      <Footer></Footer>
     </>
   );
 }
