@@ -4,7 +4,7 @@ import Whatsapp from "../layouts/Whatsapp";
 
 const Home = () => {
   return (
-    <div className=" w-100  text-white">
+    <div className=" w-100  text-white" id="home">
 <Fade duration={1500}>
 <Container className="centered-container">
             <p className="fw-semibold text-center fs-3">¡Bienvenidos a Nuestra Inmobiliaria!</p>

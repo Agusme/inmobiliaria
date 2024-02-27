@@ -56,9 +56,9 @@ const Contacto = () => {
 
   return (
     <Fade>
-  <div className="bg-contact text-white">
-      <Container>
-        <p className="fw-semibold fs-1 text-center pt-3">Contacto</p>
+  <div className="bg-contact text-white py-5" id="contacto">
+      <Container className="py-5 ">
+        <p className="fw-semibold fs-1 text-center">Contacto</p>
         <Form onSubmit={handleSubmit(onSubmit)}>
           <Form.Group controlId="formName">
             <Form.Label>
