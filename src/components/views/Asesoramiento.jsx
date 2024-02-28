@@ -1,62 +1,60 @@
+import React from "react";
+import { Fade } from "react-awesome-reveal";
 import { Button, Container, Form, Modal } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import {
-  validateMessage,
-  validateName,
-  validatePhone,
-} from "../../helpers/validateForm.jsx";
 import emailjs from "@emailjs/browser";
-import { Fade } from "react-awesome-reveal";
+import { validateMessage, validateName, validatePhone } from "../../helpers/validateForm";
 
-import React from "react";
-
-const Contacto = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isValid },
-    reset,
-  } = useForm();
-
-  const [showModal, setShowModal] = React.useState(false);
-
-  const emailjsConfig = {
-    serviceId: "service_qn846gq",
-    templateId: "template_lsp5hg6",
-    publicKey: "BDtEaJzGHui804FZE",
-  };
-
-  const onSubmit = async (data) => {
-    try {
-      const emailData = {
-        ...data,
-        user_name: data.user_name,
-        phone: data.phone,
-        message: data.message,
+const Asesoramiento = () => {
+    const {
+        register,
+        handleSubmit,
+        formState: { errors, isValid },
+        reset,
+      } = useForm();
+    
+      const [showModal, setShowModal] = React.useState(false);
+    
+      const emailjsConfig = {
+        serviceId: "service_qn846gq",
+        templateId: "template_lsp5hg6",
+        publicKey: "BDtEaJzGHui804FZE",
       };
-      const response = await emailjs.send(
-        emailjsConfig.serviceId,
-        emailjsConfig.templateId,
-        emailData,
-        emailjsConfig.publicKey
-      );
-      console.log("correo enviado con exito: ", response);
-
-      setShowModal(true);
-      reset();
-    } catch (error) {
-      console.log("error al enviar el correo", error);
-    }
-  };
-  const handleCloseModal = () => {
-    setShowModal(false);
-  };
-
+    
+      const onSubmit = async (data) => {
+        try {
+          const emailData = {
+            ...data,
+            user_name: data.user_name,
+            phone: data.phone,
+            message: data.message,
+          };
+          const response = await emailjs.send(
+            emailjsConfig.serviceId,
+            emailjsConfig.templateId,
+            emailData,
+            emailjsConfig.publicKey
+          );
+          console.log("correo enviado con exito: ", response);
+    
+          setShowModal(true);
+          reset();
+        } catch (error) {
+          console.log("error al enviar el correo", error);
+        }
+      };
+      const handleCloseModal = () => {
+        setShowModal(false);
+      };
+    
   return (
     <Fade>
-  <div className="bg-contact text-white " id="contacto">
-      <Container className="py-5 ">
-        <p className="fw-semibold fs-1 text-center pt-5">Contacto</p>
+      <Container className="text-white vh-100">
+        <h1 className="pt-5 pb-3 mt-5 text-center">Asesoramiento</h1>
+
+        <p className="fs-5 text-center">
+          ¡Dejanos tu consulta y en la brevedad nos ponemos en contacto con vos!
+        </p>
         <Form onSubmit={handleSubmit(onSubmit)}>
           <Form.Group controlId="formName">
             <Form.Label>
@@ -103,7 +101,7 @@ const Contacto = () => {
               </Form.Control.Feedback>
             )}
           </Form.Group>
-          
+
           <Form.Group controlId="form-message">
             <Form.Label className="pt-3">
               Tu consulta <span className="text-danger fw-bold">*</span>
@@ -144,10 +142,8 @@ const Contacto = () => {
           </Modal.Footer>
         </Modal>
       </Container>
-    </div>
     </Fade>
-  
   );
 };
 
-export default Contacto;
+export default Asesoramiento;

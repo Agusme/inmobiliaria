@@ -7,7 +7,7 @@ const Portada = () => {
       <div id="nosotros">
         <Container fluid className="bg-white text-center">
           <Container className="py-5">
-            <h4 className="fw-semibold fs-1 my-3">Nosotros</h4>
+            <h4 className="fw-semibold fs-1 pt-5 pb-3">Nosotros</h4>
             <p className="py-2">
               Somos una inmobiliaria de confianza en Tucumán con años de
               experiencia en el mercado inmobiliario. Nuestro equipo altamente
@@ -44,11 +44,11 @@ const Portada = () => {
           <p className="fs-2 fw-semibold">Nuestros Servicios</p>
             <Row>
               <Col lg={3} md={3} sm={6}>
-           <Link to="/compra" className="text-decoration-none">
-           <Card className="bg-image bg-img p-5 mb-2">
-                 <p className="text-white fw-semibold">Compra</p>
-                </Card>
-           </Link>
+              <Link to="compra" smooth={true} duration={500} offset={0} spy={true} className="text-decoration-none">
+                  <Card className="bg-image bg-img p-5 mb-2">
+                    <p className="text-white fw-semibold">Compra</p>
+                  </Card>
+                </Link>
               </Col>
               <Col lg={3} md={3} sm={6}>   <Card className="bg-imageCard1 bg-img p-5 mb-2">
                  <p className="text-white fw-semibold">Alquiler</p>
@@ -57,7 +57,8 @@ const Portada = () => {
                  <p className="text-white fw-semibold">Venta</p>
                 </Card></Col>
               <Col lg={3} md={3} sm={6}>   <Card className="bg-imageCard3 bg-img p-5 mb-2">
-                 <p className="text-white fw-semibold">Asesoramiento</p>
+                <Link to="/asesoramiento" className="text-decoration-none">                 <p className="text-white fw-semibold">Asesoramiento</p>
+</Link>
                 </Card></Col>
             </Row>
           </Container>

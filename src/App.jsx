@@ -11,6 +11,7 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
+import Asesoramiento from "./components/views/Asesoramiento";
 function App() {
   return (
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/" element={<> <Home /> <Nosotros /> <Contacto /></>} />
         <Route path="/contacto" element={<Contacto/>} />
         <Route path="/nosotros" element={< Nosotros/>} />
+        <Route path="/asesoramiento" element={<Asesoramiento/>} />
 
         <Route path="/compra" element={<Compra/>} />
       </Routes>
