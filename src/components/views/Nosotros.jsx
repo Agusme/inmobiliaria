@@ -44,7 +44,7 @@ const Portada = () => {
           <p className="fs-2 fw-semibold">Nuestros Servicios</p>
             <Row>
               <Col lg={3} md={3} sm={6}>
-              <Link to="compra" smooth={true} duration={500} offset={0} spy={true} className="text-decoration-none">
+              <Link to="compra" smooth={true} duration={500}  className="text-decoration-none">
                   <Card className="bg-image bg-img p-5 mb-2">
                     <p className="text-white fw-semibold">Compra</p>
                   </Card>
