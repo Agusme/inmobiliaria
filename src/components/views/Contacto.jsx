@@ -56,7 +56,7 @@ const Contacto = () => {
 
   return (
     <Fade>
-  <div className="bg-contact text-white py-5" id="contacto">
+  <div className="bg-contact text-white " id="contacto">
       <Container className="py-5 ">
         <p className="fw-semibold fs-1 text-center">Contacto</p>
         <Form onSubmit={handleSubmit(onSubmit)}>

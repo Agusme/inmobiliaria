@@ -5,7 +5,7 @@ const Portada = () => {
   return (
     <Fade>
       <div id="nosotros">
-        <Container fluid className="bg-white text-center py-5">
+        <Container fluid className="bg-white text-center">
           <Container className="py-5">
             <h4 className="fw-semibold fs-1 my-3">Nosotros</h4>
             <p className="py-2">
