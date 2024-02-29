@@ -86,14 +86,14 @@ const Contacto = () => {
                   </a>
                 </li>
                 <a
-                    href="+543815633407"
+                    href="tel:+543815633407"
                     className="text-white "
                   >
                 <li className="my-4  ">
                  
                     <IoCallOutline className="fs-1 me-3"  />
 
-                    Llamar 3815633407
+                    Llamar 3815633407!!!
                 </li>
                 </a>
 
