@@ -1,4 +1,4 @@
-import { Button, Container, Form, Modal } from "react-bootstrap";
+import { Button, Col, Container, Form, Modal, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import {
   validateMessage,
@@ -9,6 +9,9 @@ import emailjs from "@emailjs/browser";
 import { Fade } from "react-awesome-reveal";
 
 import React from "react";
+import { FaWhatsapp } from "react-icons/fa";
+import { IoCallOutline } from "react-icons/io5";
+import { TbWorld } from "react-icons/tb";
 
 const Contacto = () => {
   const {
@@ -54,99 +57,142 @@ const Contacto = () => {
 
   return (
     <Fade>
-  <div className="bg-contact text-white " id="contacto">
-      <Container className="py-5 ">
-        <p className="fw-semibold fs-1 text-center pt-5">Contacto</p>
-        <Form onSubmit={handleSubmit(onSubmit)}>
-          <Form.Group controlId="formName">
-            <Form.Label>
-              Nombre <span className="text-danger fw-bold">*</span>
-            </Form.Label>
-            <Form.Control
-              type="text"
-              name="user_name"
-              maxLength={30}
-              minLength={3}
-              placeholder="Nombre"
-              {...register("user_name", {
-                required: "Ingrese un nombre válido",
-                validate: (value) => validateName(value) || "Nombre Inválido",
-              })}
-              isInvalid={!!errors.user_name}
-              isValid={isValid}
-            />
-            {errors.user_name && (
-              <Form.Control.Feedback type="invalid">
-                {errors.user_name.message}
-              </Form.Control.Feedback>
-            )}
-          </Form.Group>
+      <div className="bg-contact text-white " id="contacto">
+        <Container className="py-5 ">
+          <Row>
+            <Col lg={6} md={6} sm={12}>
+              <p className="fw-semibold fs-1 pt-5">Contacto</p>
+              <ul className="list-unstyled">
+                <a
+                  href="https://api.whatsapp.com/send/?phone=543815633407&text=Hola%21+Quisiera+saber+m%C3%A1s+informaci%C3%B3n+de+&type=phone_number&app_absent=0"
+                  target="_blank"
+                  className=" text-white"
+                >
+                  {" "}
+                  <li className="link-hover">
+                    {" "}
+                    <FaWhatsapp className="fs-1 me-3" />Chatea con nosotros
+                  </li>
+                </a>
+                <li className="my-4">
+                  <a
+                    href="https://inmobiliaria-bmzpropiedades1.netlify.app/"
+                    className="text-white"
+                  >
+                    <TbWorld className="fs-1 me-3" />
 
-          <Form.Group controlId="formPhone">
-            <Form.Label className="pt-3">
-              Celular <span className="text-danger fw-bold">*</span>
-            </Form.Label>
-            <Form.Control
-              name="phone"
-              maxLength={12}
-              placeholder="381*******"
-              {...register("phone", {
-                required: "Ingrese un número válido",
-                validate: (value) => validatePhone(value) || "Número inválido",
-              })}
-              isInvalid={!!errors.phone}
-              isValid={isValid}
-            ></Form.Control>
-            {errors.phone && (
-              <Form.Control.Feedback type="invalid">
-                {errors.phone.message}
-              </Form.Control.Feedback>
-            )}
-          </Form.Group>
-          
-          <Form.Group controlId="form-message">
-            <Form.Label className="pt-3">
-              Tu consulta <span className="text-danger fw-bold">*</span>
-            </Form.Label>
-            <Form.Control
-              name="message"
-              as="textarea"
-              placeholder="Hola buenos dias! Estoy buscando casa en ..."
-              rows={4}
-              maxLength={1000}
-              required
-              {...register("message", {
-                required: "Ingrese una consulta correcta",
-                validate: (value) =>
-                  validateMessage(value) || "Ingrese una consulta correcta",
-              })}
-              isInvalid={!!errors.message}
-              isValid={isValid}
-            ></Form.Control>
-            {errors.user_name && (
-              <Form.Control.Feedback type="invalid">
-                {errors.message.message}
-              </Form.Control.Feedback>
-            )}
-          </Form.Group>
-          <Button type="submit" className="mt-3 btn btn-light">
-            Enviar
-          </Button>
-        </Form>
-        <Modal show={showModal} onHide={handleCloseModal}>
-          <Modal.Header closeButton>
-            <Modal.Title>Consulta Enviada!</Modal.Title>
-          </Modal.Header>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleCloseModal}>
-              Cerrar
-            </Button>
-          </Modal.Footer>
-        </Modal>
-      </Container>
-    </div>
+                    https://inmobiliaria-bmzpropiedades1.netlify.app/
+                  </a>
+                </li>
+                <a
+                    href="tel:+3815633407"
+                    className="text-white "
+                  >
+                <li className="my-4  ">
+                 
+                    <IoCallOutline className="fs-1 me-3"  />
+
+                    Llamar +3815633407
+                </li>
+                </a>
+
+              </ul>
+            </Col>
+            <Col lg={6} md={6} sm={12}>
+              <Form onSubmit={handleSubmit(onSubmit)}>
+                <Form.Group controlId="formName">
+                  <Form.Label className="pt-5">
+                    Nombre <span className="text-danger fw-bold">*</span>
+                  </Form.Label>
+                  <Form.Control
+                    type="text"
+                    name="user_name"
+                    maxLength={30}
+                    minLength={3}
+                    placeholder="Nombre"
+                    {...register("user_name", {
+                      required: "Ingrese un nombre válido",
+                      validate: (value) =>
+                        validateName(value) || "Nombre Inválido",
+                    })}
+                    isInvalid={!!errors.user_name}
+                    isValid={isValid}
+                  />
+                  {errors.user_name && (
+                    <Form.Control.Feedback type="invalid">
+                      {errors.user_name.message}
+                    </Form.Control.Feedback>
+                  )}
+                </Form.Group>
+
+                <Form.Group controlId="formPhone">
+                  <Form.Label className="pt-3">
+                    Celular <span className="text-danger fw-bold">*</span>
+                  </Form.Label>
+                  <Form.Control
+                    name="phone"
+                    maxLength={12}
+                    placeholder="381*******"
+                    {...register("phone", {
+                      required: "Ingrese un número válido",
+                      validate: (value) =>
+                        validatePhone(value) || "Número inválido",
+                    })}
+                    isInvalid={!!errors.phone}
+                    isValid={isValid}
+                  ></Form.Control>
+                  {errors.phone && (
+                    <Form.Control.Feedback type="invalid">
+                      {errors.phone.message}
+                    </Form.Control.Feedback>
+                  )}
+                </Form.Group>
+
+                <Form.Group controlId="form-message">
+                  <Form.Label className="pt-3">
+                    Tu consulta <span className="text-danger fw-bold">*</span>
+                  </Form.Label>
+                  <Form.Control
+                    name="message"
+                    as="textarea"
+                    placeholder="Hola buenos dias! Estoy buscando casa en ..."
+                    rows={4}
+                    maxLength={1000}
+                    required
+                    {...register("message", {
+                      required: "Ingrese una consulta correcta",
+                      validate: (value) =>
+                        validateMessage(value) ||
+                        "Ingrese una consulta correcta",
+                    })}
+                    isInvalid={!!errors.message}
+                    isValid={isValid}
+                  ></Form.Control>
+                  {errors.user_name && (
+                    <Form.Control.Feedback type="invalid">
+                      {errors.message.message}
+                    </Form.Control.Feedback>
+                  )}
+                </Form.Group>
+                <Button type="submit" className="mt-3 btn btn-light">
+                  Enviar
+                </Button>
+              </Form>
+            </Col>
+          </Row>
+          <Modal show={showModal} onHide={handleCloseModal}>
+            <Modal.Header closeButton>
+              <Modal.Title>Consulta Enviada!</Modal.Title>
+            </Modal.Header>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleCloseModal}>
+                Cerrar
+              </Button>
+            </Modal.Footer>
+          </Modal>
+        </Container>
+      </div>
     </Fade>
-  
   );
 };
 
