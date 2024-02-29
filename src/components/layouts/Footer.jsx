@@ -1,5 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { FaFacebook, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -12,10 +13,14 @@ const Footer = () => {
         <Col lg={4} md={4} sm={12}>
           <p className="d-inline-block align-top pt-3 fw-semibold">Páginas</p>
           <ul className="list-unstyled">
-            <li className="poppins-light linkhover">Casas</li>
-            <li className="poppins-light linkhover">Terrenos</li>
-            <li className="poppins-light linkhover">Oficinas</li>
-            <li className="poppins-light linkhover">Departamentos</li>
+            <Link to="/compra" className="text-decoration-none text-light">            <li className=" poppins-light linkhover">Compra</li>
+</Link>
+<Link to="/venta" className="text-decoration-none text-light">            <li className=" poppins-light linkhover">Venta</li>
+</Link>
+<Link to="/alquiler" className="text-decoration-none text-light">            <li className=" poppins-light linkhover">Alquiler</li>
+</Link>
+<Link to="/asesoramiento" className="text-decoration-none text-light">            <li className=" poppins-light linkhover">Asesoramiento</li>
+</Link>
           </ul>
         </Col>
         <Col lg={4} md={4} sm={12}>

@@ -7,7 +7,7 @@ const Home = () => {
     <div className=" w-100  text-white" id="home">
 <Fade duration={1500}>
 <Container className="centered-container">
-            <p className="fw-semibold text-center fs-3">¡Bienvenidos a Nuestra Inmobiliaria!</p>
+            <p className="fw-semibold text-center fs-3 pt-5">¡Bienvenidos a Nuestra Inmobiliaria!</p>
 
             <p className="poppins-medium text-center my-5">BMZ PROPIEDADES
             </p>

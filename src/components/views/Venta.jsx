@@ -1,11 +1,11 @@
 import React from "react";
-import { Fade } from "react-awesome-reveal";
-import { Button, Container, Form, Modal } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
+import { Fade } from "react-awesome-reveal";
+import { Button, Container, Form, Modal } from "react-bootstrap";
 import { validateMessage, validateName, validatePhone } from "../../helpers/validateForm";
 
-const Asesoramiento = () => {
+const Venta = () => {
     const {
         register,
         handleSubmit,
@@ -50,12 +50,10 @@ const Asesoramiento = () => {
   return (
     <Fade>
       <Container className="text-white vh-100">
-        <h1 className="pt-5 pb-3 mt-5 text-center">Asesoramiento</h1>
+        <h1 className="pt-5 pb-3 mt-5 text-center">¿Querés vender tu propiedad?</h1>
 
         <p className="fs-6 text-center my-3" >
-            
-        Como profesionales con una amplia trayectoria en el sector inmobiliario, ofrecemos asesoramiento especializado en bienes raíces.
-          ¡Dejanos tu consulta y en la brevedad nos ponemos en contacto con vos!
+          ¡Describe tu propiedad y en la brevedad nos ponemos en contacto con vos!
         </p>
         <Form onSubmit={handleSubmit(onSubmit)}>
           <Form.Group controlId="formName">
@@ -106,12 +104,12 @@ const Asesoramiento = () => {
 
           <Form.Group controlId="form-message">
             <Form.Label className="pt-3">
-              Tu consulta <span className="text-danger fw-bold">*</span>
+              Describe tu propiedad<span className="text-danger fw-bold">*</span>
             </Form.Label>
             <Form.Control
               name="message"
               as="textarea"
-              placeholder="Escribe tu consulta, nosotros te asesoramos"
+              placeholder="Hola! Tengo una ... ubicada en ... "
               rows={4}
               maxLength={1000}
               required
@@ -148,4 +146,4 @@ const Asesoramiento = () => {
   );
 };
 
-export default Asesoramiento;
+export default Venta;

@@ -78,7 +78,17 @@ body {
 
 }
 
+.bg-terreno{
+  background-image: url("../src/assets/terreno.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: 40%;
+  height: 100vh; 
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
 
+}
 .bg-contact{
 background-image: url("../src/assets/fondoContact.jpeg");
 background-size: cover;

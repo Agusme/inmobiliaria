@@ -12,6 +12,8 @@ import {
   Routes,
 } from "react-router-dom";
 import Asesoramiento from "./components/views/Asesoramiento";
+import Venta from "./components/views/Venta";
+import Alquiler from "./components/views/Alquiler";
 function App() {
   return (
 
@@ -23,8 +25,11 @@ function App() {
         <Route path="/contacto" element={<Contacto/>} />
         <Route path="/nosotros" element={< Nosotros/>} />
         <Route path="/asesoramiento" element={<Asesoramiento/>} />
+        <Route path="/alquiler" element={<Alquiler/>} />
 
         <Route path="/compra" element={<Compra/>} />
+        <Route path="/venta" element={<Venta/>} />
+
       </Routes>
       <Footer />
     </div>
