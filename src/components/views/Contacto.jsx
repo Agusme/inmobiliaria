@@ -86,7 +86,7 @@ const Contacto = () => {
                   </a>
                 </li>
                 <a
-                    href="tel:+3815633407"
+                    href="+54-381-563-3407"
                     className="text-white "
                   >
                 <li className="my-4  ">
