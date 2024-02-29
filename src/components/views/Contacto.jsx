@@ -59,9 +59,10 @@ const Contacto = () => {
     <Fade>
       <div className="bg-contact text-white " id="contacto">
         <Container className="py-5 ">
+        <p className="fw-semibold fs-1 text-center pt-5">Contacto</p>
+
           <Row>
             <Col lg={6} md={6} sm={12}>
-              <p className="fw-semibold fs-1 pt-5">Contacto</p>
               <ul className="list-unstyled">
                 <a
                   href="https://api.whatsapp.com/send/?phone=543815633407&text=Hola%21+Quisiera+saber+m%C3%A1s+informaci%C3%B3n+de+&type=phone_number&app_absent=0"
@@ -69,7 +70,7 @@ const Contacto = () => {
                   className=" text-white"
                 >
                   {" "}
-                  <li className="link-hover">
+                  <li className="link-hover pt-4">
                     {" "}
                     <FaWhatsapp className="fs-1 me-3" />Chatea con nosotros
                   </li>
@@ -92,7 +93,7 @@ const Contacto = () => {
                  
                     <IoCallOutline className="fs-1 me-3"  />
 
-                    Llamar +3815633407
+                    Llamar 3815633407
                 </li>
                 </a>
 
@@ -101,7 +102,7 @@ const Contacto = () => {
             <Col lg={6} md={6} sm={12}>
               <Form onSubmit={handleSubmit(onSubmit)}>
                 <Form.Group controlId="formName">
-                  <Form.Label className="pt-5">
+                  <Form.Label className="pt-4">
                     Nombre <span className="text-danger fw-bold">*</span>
                   </Form.Label>
                   <Form.Control
