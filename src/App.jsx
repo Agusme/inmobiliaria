@@ -38,7 +38,6 @@ function App() {
           <Route path="/nosotros" element={<Nosotros />} />
           <Route path="/asesoramiento" element={<Asesoramiento />} />
           <Route path="/alquiler" element={<Alquiler />} />
-
           <Route path="/compra" element={<Compra />} />
           <Route path="/venta" element={<Venta />} />
           <Route path="/admin" element={<Administrador />} />
