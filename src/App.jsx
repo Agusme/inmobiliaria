@@ -6,18 +6,23 @@ import Contacto from "./components/views/Contacto";
 import Footer from "./components/layouts/Footer";
 import Nosotros from "./components/views/Nosotros";
 import Compra from "./components/views/Compra";
-import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 import Asesoramiento from "./components/views/Asesoramiento";
 import Venta from "./components/views/Venta";
 import Alquiler from "./components/views/Alquiler";
 import Administrador from "./components/views/Administrador";
-import { useEffect, useState } from "react";
+import {useEffect, useState } from "react";
 import AdmPropiedades from "./components/views/AdmPropiedades";
 function App() {
   const [isAdmin, setIsAdmin] = useState(false);
-  useEffect(() => {
-  
 
+
+  useEffect(() => {
     setIsAdmin(true);
   }, []);
   return (
@@ -41,8 +46,10 @@ function App() {
           <Route path="/compra" element={<Compra />} />
           <Route path="/venta" element={<Venta />} />
           <Route path="/admin" element={<Administrador />} />
-          <Route path="/admin-propiedades" element={isAdmin? (<AdmPropiedades />) : <Navigate to="/"/>} />
-
+          <Route
+            path="/admin-propiedades"
+            element={isAdmin ? <AdmPropiedades /> : <Navigate to="/" />}
+          />
         </Routes>
         <Footer />
       </div>
