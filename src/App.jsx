@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import "./App.css";
 import Navegation from "./components/layouts/Navegation";
 import Home from "./components/views/Home";
@@ -16,15 +17,32 @@ import Asesoramiento from "./components/views/Asesoramiento";
 import Venta from "./components/views/Venta";
 import Alquiler from "./components/views/Alquiler";
 import Administrador from "./components/views/Administrador";
-import {useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import AdmPropiedades from "./components/views/AdmPropiedades";
+import axios from "../src/config/axiosInit"
+
+
+
 function App() {
   const [isAdmin, setIsAdmin] = useState(false);
-
+  const [properties, setProperties] = useState([]);
+  const URL = import.meta.VITE_API_BMZ;
 
   useEffect(() => {
+    getProperties();
     setIsAdmin(true);
   }, []);
+
+  const getProperties = async () => {
+    try {
+      const res = await axios.get(URL);
+      setProperties(res.data);
+    } catch (error) {
+      console.error("Error fetching properties:", error);
+    }
+  };
+
+
   return (
     <Router>
       <div>
@@ -42,13 +60,32 @@ function App() {
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/nosotros" element={<Nosotros />} />
           <Route path="/asesoramiento" element={<Asesoramiento />} />
-          <Route path="/alquiler" element={<Alquiler />} />
-          <Route path="/compra" element={<Compra />} />
+          <Route
+            path="/alquiler"
+            element={
+              <Alquiler properties={properties} getProperties={getProperties} />
+            }
+          />
+          <Route
+            path="/compra"
+            element={
+              <Compra properties={properties} getProperties={getProperties} />
+            }
+          />
           <Route path="/venta" element={<Venta />} />
           <Route path="/admin" element={<Administrador />} />
           <Route
             path="/admin-propiedades"
-            element={isAdmin ? <AdmPropiedades /> : <Navigate to="/" />}
+            element={
+              isAdmin ? (
+                <AdmPropiedades
+                  properties={properties}
+                  getProperties={getProperties}
+                />
+              ) : (
+                <Navigate to="/" />
+              )
+            }
           />
         </Routes>
         <Footer />

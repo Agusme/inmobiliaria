@@ -1,4 +1,4 @@
-import bcrypt from 'bcryptjs';
+import bcrypt from "bcryptjs";
 const SALT_ROUND =10;
 const adminPassword = import.meta.env.VITE_ADMIN_PASSWORD;
 
