@@ -20,6 +20,7 @@ import Administrador from "./components/views/Administrador";
 import { useEffect, useState } from "react";
 import AdmPropiedades from "./components/views/AdmPropiedades";
 import axios from "../src/config/axiosInit"
+import PropertyEdit from "./components/views/property/PropertyEdit";
 
 
 
@@ -79,6 +80,20 @@ function App() {
             element={
               isAdmin ? (
                 <AdmPropiedades
+                  properties={properties}
+                  getProperties={getProperties}
+                />
+              ) : (
+                <Navigate to="/" />
+              )
+            }
+          />
+
+<Route
+            path="/property/edit/:id"
+            element={
+              isAdmin ? (
+                <PropertyEdit
                   properties={properties}
                   getProperties={getProperties}
                 />

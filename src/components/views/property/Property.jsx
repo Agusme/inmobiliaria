@@ -33,7 +33,7 @@ const Property = ({properties, getProperties}) => {
 
           console.log(res);
           if (res.status === STATUS.STATUS_OK) {
-            Swal.fire("Eliminado", "El paciente fue eliminado", "success");
+            Swal.fire("Eliminado", "La propiedade fue eliminada", "success");
             getProperties();
           }
         } catch (error) {
@@ -56,8 +56,7 @@ const Property = ({properties, getProperties}) => {
       <td className="w-25">
         <div className="d-flex justify-content-center">
           <Link
-            /* hacer ruta d edit */
-            to={`/pacient/edit/${properties?._id}`}
+            to={`/property/edit/${properties?._id}`}
             className="btn btn-warning mx-1 "
           >
             Editar
