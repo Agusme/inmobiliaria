@@ -40,8 +40,8 @@ const PropertyEdit = ({ getProperties }) => {
 
       if (res.status === STATUS.STATUS_OK) {
         Swal.fire(
-          "Actualizado",
-          "El paciente fue actualizado correctamente",
+          "Actualizada",
+          "La propiedad fue actualizada correctamente",
           "success"
         );
         reset();
