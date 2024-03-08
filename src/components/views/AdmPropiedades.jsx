@@ -3,9 +3,12 @@ import axios from "../../config/axiosInit";
 import { Button, Col, Container, Form, Row, Table } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import Property from "./property/Property";
 
-const AdmPropiedades = ({ getProperties }) => {
-  const { register, handleSubmit, reset } = useForm();
+const AdmPropiedades = ({ getProperties, properties }) => {
+  console.log(properties)
+  
+    const { register, handleSubmit, reset } = useForm();
 
   const URL = import.meta.VITE_API_BMZ;
 
@@ -29,20 +32,35 @@ const AdmPropiedades = ({ getProperties }) => {
       <Container className="py-5 my-5">
         <div className="bg-white py-5">
           <h1 className="mt-3 text-center"> Administración de propiedades</h1>
-          <Table bordered hover responsive className="align-middle mt-3 mx-4">
-            <thead>
-              <tr>
-                <th>Id</th>
-                <th>Type Property</th>
-                <th>Type Transaction</th>
-                <th>Location</th>
-                <th>Description</th>
-                <th>Map</th>
-                <th>Images</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </Table>
+       {properties?.length !== 0?(
+           <Table bordered hover responsive className="align-middle mt-3 mx-4">
+           <thead>
+             <tr>
+               <th>Id</th>
+               <th>Type Property</th>
+               <th>Type Transaction</th>
+               <th>Location</th>
+               <th>Description</th>
+               <th>Map</th>
+               <th>Images</th>
+               <th>Acciones</th>
+             </tr>
+           </thead>
+           <tbody>
+            {properties?.map((property)=>(
+                <Property
+                key={property._id}
+                properties={property}
+                getProperties={getProperties}
+                />
+            ))}
+           </tbody>
+         </Table>
+       ): (
+        <div className="no-products-found d-flex align-items-center justify-content-center">
+          <h1>🏘️No se encontraron Propiedades🏘️</h1>
+        </div>
+      )}
         </div>
         <div className="bg-white mb-5 pt-5">
           <h3 className="my-3 text-center">Añadir Propiedad 🏘️</h3>
@@ -50,7 +68,7 @@ const AdmPropiedades = ({ getProperties }) => {
             <Form onSubmit={handleSubmit(onSubmit)}>
               <Row>
                 <Form.Group
-                  className="mb-3 d-flex "
+                  className="mb-3  d-flex flex-md-row flex-column"
                   controlId="formTypeProperty"
                 >
                   <Col lg={4} md={4} sm={12}>
@@ -70,7 +88,7 @@ const AdmPropiedades = ({ getProperties }) => {
                   </Col>
                 </Form.Group>
                 <Form.Group
-                  className="mb-3 d-flex "
+                  className="mb-3 d-flex flex-md-row flex-column"
                   controlId="formTypeTransaction"
                 >
                   <Col lg={4} md={4} sm={12}>
@@ -88,7 +106,7 @@ const AdmPropiedades = ({ getProperties }) => {
                     />
                   </Col>
                 </Form.Group>
-                <Form.Group className="mb-3 d-flex " controlId="formLocation">
+                <Form.Group className="mb-3 d-flex flex-md-row flex-column " controlId="formLocation">
                   <Col lg={4} md={4} sm={12}>
                     <Form.Label>
                       <span className="fw-semibold">Location </span>
@@ -103,7 +121,7 @@ const AdmPropiedades = ({ getProperties }) => {
                     />
                   </Col>
                 </Form.Group>
-                <Form.Group className="mb-3 d-flex " controlId="formDescription">
+                <Form.Group className="mb-3 d-flex flex-md-row flex-column " controlId="formDescription">
                   <Col lg={4} md={4} sm={12}>
                     <Form.Label>
                       <span className="fw-semibold">Description </span>
@@ -118,7 +136,7 @@ const AdmPropiedades = ({ getProperties }) => {
                     />
                   </Col>
                 </Form.Group>
-                <Form.Group className="mb-3 d-flex " controlId="formMap">
+                <Form.Group className="mb-3 d-flex flex-md-row flex-column " controlId="formMap">
                   <Col lg={4} md={4} sm={12}>
                     <Form.Label>
                       <span className="fw-semibold">Map </span>
@@ -133,7 +151,7 @@ const AdmPropiedades = ({ getProperties }) => {
                     />
                   </Col>
                 </Form.Group>
-                <Form.Group className="mb-3 d-flex " controlId="formImages">
+                <Form.Group className="mb-3 d-flex flex-md-row flex-column " controlId="formImages">
                   <Col lg={4} md={4} sm={12}>
                     <Form.Label>
                       <span className="fw-semibold">Images </span>
