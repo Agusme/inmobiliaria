@@ -158,7 +158,16 @@ backdrop-filter: blur(5px);
   object-fit: cover; 
   display: block;
 }
+.card-houses{
+  min-height: 350px;}
 
+
+  .custom-btn.btn {
+    background-color: #1D3251 ;
+    border-color:#1D3251; 
+    color: #ffffff; 
+  }
+  
 
 @media all and (min-width: 480px) and (max-width: 768px) {
   .poppins-medium {
