@@ -21,6 +21,7 @@ import { useEffect, useState } from "react";
 import AdmPropiedades from "./components/views/AdmPropiedades";
 import axios from "../src/config/axiosInit"
 import PropertyEdit from "./components/views/property/PropertyEdit";
+import CompraCasa from "./components/views/CompraCasa";
 
 
 
@@ -73,6 +74,8 @@ function App() {
               <Compra properties={properties} getProperties={getProperties} />
             }
           />
+          <Route
+          path="/compra-casa" element={<CompraCasa properties={properties} getProperties={getProperties} />}/>
           <Route path="/venta" element={<Venta />} />
           <Route path="/admin" element={<Administrador />} />
           <Route

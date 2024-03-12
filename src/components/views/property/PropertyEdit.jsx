@@ -101,6 +101,38 @@ const PropertyEdit = ({ getProperties }) => {
                     />
                   </Col>
                 </Form.Group>
+                <Form.Group className="mb-3 d-flex flex-md-row flex-column " controlId="formBedroom">
+                  <Col lg={4} md={4} sm={12}>
+                    <Form.Label>
+                      <span className="fw-semibold">Habitaciones </span>
+                    </Form.Label>
+                  </Col>
+                  <Col lg={8} md={8} sm={12}>
+                    <Form.Control
+                    type="number"
+                      {...register("bedroom")}
+                      placeholder="Ingrese la cantidad de habitaciones"
+                      maxLength={30}
+                      required
+                    />
+                  </Col>
+                </Form.Group>
+                <Form.Group className="mb-3 d-flex flex-md-row flex-column " controlId="formBathroom">
+                  <Col lg={4} md={4} sm={12}>
+                    <Form.Label>
+                      <span className="fw-semibold">Baños </span>
+                    </Form.Label>
+                  </Col>
+                  <Col lg={8} md={8} sm={12}>
+                    <Form.Control
+                    type="number"
+                      {...register("bathroom")}
+                      placeholder="Ingrese la cantidad de baños"
+                      maxLength={30}
+                      required
+                    />
+                  </Col>
+                </Form.Group>
                 <Form.Group className="mb-3 d-flex flex-md-row flex-column " controlId="formLocation">
                   <Col lg={4} md={4} sm={12}>
                     <Form.Label>

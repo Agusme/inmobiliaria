@@ -48,6 +48,8 @@ const Property = ({properties, getProperties}) => {
       <td>{properties?._id}</td>
       <td>{properties?.typeProperty}</td>
       <td>{properties?.typeTransaction}</td>
+      <td>{properties?.bathroom}</td>
+      <td>{properties?.bedroom}</td>
       <td>{properties?.location}</td>
       <td>{properties?.description}</td>
       <td>{properties?.map}</td>

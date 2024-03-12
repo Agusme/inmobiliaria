@@ -15,9 +15,13 @@ const AdmPropiedades = ({ getProperties, properties }) => {
   const onSubmit = async (data) => {
     console.log(data);
   
+    const imagesArray = data.images.split(',');
+  
     try {
-      const res = await axios.post(URL, data);
+      const res = await axios.post(URL, { ...data, images: imagesArray });
+      
       console.log(res);
+  
       if (res.status === 201) {
         Swal.fire("Creada", "La propiedad fue creada con éxito");
         reset();
@@ -39,6 +43,8 @@ const AdmPropiedades = ({ getProperties, properties }) => {
                <th>Id</th>
                <th>Type Property</th>
                <th>Type Transaction</th>
+               <th>Bathroom</th>
+               <th>Bedroom</th>
                <th>Location</th>
                <th>Description</th>
                <th>Map</th>
@@ -106,6 +112,39 @@ const AdmPropiedades = ({ getProperties, properties }) => {
                     />
                   </Col>
                 </Form.Group>
+           
+                <Form.Group className="mb-3 d-flex flex-md-row flex-column " controlId="formBathroom">
+                  <Col lg={4} md={4} sm={12}>
+                    <Form.Label>
+                      <span className="fw-semibold">Baños </span>
+                    </Form.Label>
+                  </Col>
+                  <Col lg={8} md={8} sm={12}>
+                    <Form.Control
+                    type="number"
+                      {...register("bathroom")}
+                      placeholder="Ingrese la cantidad de baños"
+                      maxLength={30}
+                      required
+                    />
+                  </Col>
+                </Form.Group>
+                <Form.Group className="mb-3 d-flex flex-md-row flex-column " controlId="formBedroom">
+                  <Col lg={4} md={4} sm={12}>
+                    <Form.Label>
+                      <span className="fw-semibold">Habitaciones </span>
+                    </Form.Label>
+                  </Col>
+                  <Col lg={8} md={8} sm={12}>
+                    <Form.Control
+                    type="number"
+                      {...register("bedroom")}
+                      placeholder="Ingrese la cantidad de habitaciones"
+                      maxLength={30}
+                      required
+                    />
+                  </Col>
+                </Form.Group>
                 <Form.Group className="mb-3 d-flex flex-md-row flex-column " controlId="formLocation">
                   <Col lg={4} md={4} sm={12}>
                     <Form.Label>
@@ -159,10 +198,12 @@ const AdmPropiedades = ({ getProperties, properties }) => {
                   </Col>
                   <Col lg={8} md={8} sm={12}>
                     <Form.Control
-                    
                     {...register("images")}
                     required 
                     />
+                     <Form.Text className="text-muted">
+      Puedes ingresar varias URLs separadas por comas.
+    </Form.Text>
                   </Col>
                 </Form.Group>
               </Row>

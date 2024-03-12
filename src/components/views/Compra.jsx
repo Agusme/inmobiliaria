@@ -1,5 +1,6 @@
 import { Fade } from "react-awesome-reveal";
 import { Card, Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 const Compra = () => {
   return (
     <Fade>
@@ -12,8 +13,13 @@ const Compra = () => {
               <Col lg={3} md={3} sm={12}>
                 {" "}
                 <Card className="bg-imageCasa bg-img p-5 mb-2">
-                  <p className="text-white fw-semibold fs-5">Casa</p>
-                </Card>
+
+
+                <Link to="/compra-casa" className="text-decoration-none">
+                    {" "}
+                    <p className="text-white fw-semibold">Casa</p>
+                  </Link>
+ç                </Card>
               </Col>
               <Col lg={3} md={3} sm={12}>
                 {" "}
