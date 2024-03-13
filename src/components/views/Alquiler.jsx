@@ -5,7 +5,7 @@ const Alquiler = () => {
     return (
         <Fade>
         <div>
-          <h1 className="text-white pt-5 my-5 text-center">¿Qué Buscás?</h1>
+          <h4 className="text-white pt-5 my-5 text-center display-4 fw-semibold">¿Qué Buscás?</h4>
   
           <Container fluid className="bg-white py-5 mb-5">
             <Container>
@@ -13,13 +13,13 @@ const Alquiler = () => {
                 <Col lg={6} md={6} sm={12}>
                   {" "}
                   <Card className="bg-imageCard3 bg-img p-5 mb-2">
-                    <p className="text-white fw-semibold fs-5">Departamento</p>
+                    <p className="text-white fs-3 fw-bold">Departamento</p>
                   </Card>
                 </Col>
                 <Col lg={6} md={6} sm={12}>
                   {" "}
                   <Card className="bg-imageCard2 bg-img p-5 mb-2">
-                    <p className="text-white fw-semibold fs-5">Local</p>
+                    <p className="text-white fs-3 fw-bold">Local</p>
                   </Card>
                 </Col>
               </Row>

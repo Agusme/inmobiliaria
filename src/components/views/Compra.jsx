@@ -5,7 +5,9 @@ const Compra = () => {
   return (
     <Fade>
       <div>
-        <h1 className="text-white pt-5 my-5 text-center">¿Qué Buscás?</h1>
+        <h1 className="text-white pt-5 my-5 text-center display-4 fw-semibold">
+          ¿Qué Buscás?
+        </h1>
 
         <Container fluid className="bg-white py-5 mb-5">
           <Container>
@@ -13,30 +15,34 @@ const Compra = () => {
               <Col lg={3} md={3} sm={12}>
                 {" "}
                 <Card className="bg-imageCasa bg-img p-5 mb-2">
-
-
-                <Link to="/compra-casa" className="text-decoration-none">
+                  <Link to="/compra-casa" className="text-decoration-none">
                     {" "}
-                    <p className="text-white fw-semibold">Casa</p>
+                    <p className="text-white fs-5 fw-bold">Casa</p>
                   </Link>
-ç                </Card>
+                </Card>
               </Col>
               <Col lg={3} md={3} sm={12}>
                 {" "}
                 <Card className="bg-imageCard3 bg-img p-5 mb-2">
-                  <p className="text-white fw-semibold fs-5">Departamento</p>
+                  <Link to="/compra-casa" className="text-decoration-none">
+                    <p className="text-white fs-5 fw-bold">Departamento</p>
+                  </Link>
                 </Card>
               </Col>
               <Col lg={3} md={3} sm={12}>
                 {" "}
                 <Card className="bg-terreno bg-img p-5 mb-2">
-                  <p className="text-white fw-semibold fs-5">Terreno</p>
+                  <Link to="/compra-casa" className="text-decoration-none">
+                    <p className="text-white fs-5 fw-bold">Terreno</p>
+                  </Link>
                 </Card>
               </Col>
               <Col lg={3} md={3} sm={12}>
                 {" "}
                 <Card className="bg-imageCard2 bg-img p-5 mb-3">
-                  <p className="text-white fw-semibold fs-5">Local</p>
+                  <Link to="/compra-casa" className="text-decoration-none">
+                    <p className="text-white fs-5 fw-bold">Local</p>
+                  </Link>{" "}
                 </Card>
               </Col>
             </Row>

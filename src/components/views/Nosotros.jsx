@@ -5,47 +5,14 @@ const Portada = () => {
   return (
     <Fade>
       <div id="nosotros">
-        <Container fluid className="bg-white text-center">
+        <Container fluid className="bg-white text-center pb-5">
           <Container className="py-5">
-            <h4 className="fw-semibold fs-1 pt-5 pb-3">Nosotros</h4>
-            <p className="py-2">
-              Somos una inmobiliaria de confianza en Tucumán con años de
-              experiencia en el mercado inmobiliario. Nuestro equipo altamente
-              capacitado está aquí para ayudarte en la compra, venta y alquier
-              de propiedades. Brindamos un servicio profesional y personalizado
-              para hacer realidad tus objetivos inmobiliarios.
-            </p>
-
-            <Row>
-              <Col lg={4} md={4} sm={12}>
-                <p className="fs-4 fw-semibold">Expertos en Bienes de Raices</p>
-                <p>
-                  Nos esforzamos por ofrecer un servicio excepcional a cada uno
-                  de nuestros clientes.
-                </p>
-              </Col>
-              <Col lg={8} md={8} sm={12}>
-                <Row className="text-center mt-4">
-                  <Col lg={4} md={5} sm={4}>
-                    <p className="fw-semibold fs-2 text-warning">+30</p>
-                    <p>Años de experiencia</p>
-                  </Col>
-                  <Col lg={4} md={5} sm={4}>
-                    <p className="fw-semibold fs-2 text-warning">+1500</p>
-                    <p>Propiedades vendidas</p>
-                  </Col>
-                  <Col lg={4} md={5} sm={4}>
-                    <p className="fw-semibold fs-2 text-warning">+2500</p>
-                    <p>Clientes felices</p>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-            <p className="fs-2 fw-semibold">Nuestros Servicios</p>
+           
+            <h4 className="display-4 fw-semibold py-5">Nuestros Servicios</h4>
             <Row>
               <Col lg={3} md={3} sm={6}>
                 <Link
-                  to="compra"
+                  to="/compra"
                   smooth={true}
                   duration={500}
                   className="text-decoration-none"
@@ -83,7 +50,42 @@ const Portada = () => {
                 </Card>
               </Col>
             </Row>
+            <h4 className="fw-semibold display-5 pt-5 pb-3">Nosotros</h4>
+            <p className="py-2">
+              Somos una inmobiliaria de confianza en Tucumán con años de
+              experiencia en el mercado inmobiliario. Nuestro equipo altamente
+              capacitado está aquí para ayudarte en la compra, venta y alquier
+              de propiedades. Brindamos un servicio profesional y personalizado
+              para hacer realidad tus objetivos inmobiliarios.
+            </p>
+
+            <Row>
+              <Col lg={4} md={4} sm={12}>
+                <p className="fs-4 fw-semibold">Expertos en Bienes de Raices</p>
+                <p>
+                  Nos esforzamos por ofrecer un servicio excepcional a cada uno
+                  de nuestros clientes.
+                </p>
+              </Col>
+              <Col lg={8} md={8} sm={12}>
+                <Row className="text-center mt-4">
+                  <Col lg={4} md={5} sm={4}>
+                    <p className="fw-semibold fs-2 text-warning">+30</p>
+                    <p>Años de experiencia</p>
+                  </Col>
+                  <Col lg={4} md={5} sm={4}>
+                    <p className="fw-semibold fs-2 text-warning">+1500</p>
+                    <p>Propiedades vendidas</p>
+                  </Col>
+                  <Col lg={4} md={5} sm={4}>
+                    <p className="fw-semibold fs-2 text-warning">+2500</p>
+                    <p>Clientes felices</p>
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
           </Container>
+         
         </Container>
       </div>
     </Fade>
