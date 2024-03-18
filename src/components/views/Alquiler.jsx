@@ -5,7 +5,7 @@ const Alquiler = () => {
     return (
         <Fade>
         <div>
-          <h4 className="text-white pt-5 my-5 text-center display-4 fw-semibold">¿Qué Buscás?</h4>
+          <h4 className="text-white pt-5 my-5 text-center display-4">¿Qué Buscás?</h4>
   
           <Container fluid className="bg-white py-5 mb-5">
             <Container>

@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import {  Button, Card, CardBody, Col, Container, Row } from "react-bootstrap";
+import { Button, Card, CardBody, Col, Container, Row } from "react-bootstrap";
 import { ImLocation } from "react-icons/im";
 import { TbBathFilled } from "react-icons/tb";
 import { IoBed } from "react-icons/io5";
@@ -9,7 +9,7 @@ const CompraCasa = ({ properties }) => {
   return (
     <div className="mt-5 pt-5">
       <Container className="p-5">
-        <h1 className="text-center text-white display-4">Casas en Venta</h1>
+        <h1 className="text-white text-center display-4">Casas en Venta</h1>
         <Row>
           {properties.map(
             (property) =>
@@ -32,31 +32,27 @@ const CompraCasa = ({ properties }) => {
                       </p>
                       <hr />
                       <p className="text-center poppins-light">
-                      {property.bathroom >= 1 && (
-    <>
-      <TbBathFilled className="text-warning mx-3" />
-      {property.bathroom}
-    </>
-  )}
-  {property.bedroom >= 1 && (
-    <>
-      <IoBed className="text-warning mx-3" />
-      {property.bedroom}
-    </>
-  )}
-</p>
+                        {property.bathroom >= 1 && (
+                          <>
+                            <TbBathFilled className="text-warning mx-3" />
+                            {property.bathroom}
+                          </>
+                        )}
+                        {property.bedroom >= 1 && (
+                          <>
+                            <IoBed className="text-warning mx-3" />
+                            {property.bedroom}
+                          </>
+                        )}
+                      </p>
 
-<Link to={`/compra-casa-id/${property._id}`}>
-  <Button className="btn btn-mas custom-btn">Ver más</Button>
-</Link>
-
-
-
-
+                      <Link to={`/compra-casa-id/${property._id}`}>
+                        <Button className="btn btn-mas custom-btn">
+                          Ver más
+                        </Button>
+                      </Link>
                     </CardBody>
-          
                   </Card>
-      
                 </Col>
               )
           )}

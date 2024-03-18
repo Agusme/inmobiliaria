@@ -59,7 +59,7 @@ const Contacto = () => {
     <Fade>
       <div className="bg-contact text-white " id="contacto">
         <Container className="py-5 ">
-        <h4 className="fw-semibold  text-center display-4 py-5">Contacto</h4>
+        <h4 className=" text-center display-4 py-5">Contacto</h4>
 
           <Row>
             <Col lg={6} md={6} sm={12}>

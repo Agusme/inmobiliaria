@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 const Compra = () => {
   return (
     <Fade>
-      <div>
-        <h1 className="text-white pt-5 my-5 text-center display-4 fw-semibold">
+      <div >
+        <h1 className="text-white  pt-5 my-5 text-center display-4">
           ¿Qué Buscás?
         </h1>
 

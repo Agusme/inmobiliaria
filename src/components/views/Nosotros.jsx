@@ -8,7 +8,7 @@ const Portada = () => {
         <Container fluid className="bg-white text-center pb-5">
           <Container className="py-5">
            
-            <h4 className="display-4 fw-semibold py-5">Nuestros Servicios</h4>
+            <h4 className="display-4 letra-azul py-5">Nuestros Servicios</h4>
             <Row>
               <Col lg={3} md={3} sm={6}>
                 <Link
@@ -50,7 +50,7 @@ const Portada = () => {
                 </Card>
               </Col>
             </Row>
-            <h4 className="fw-semibold display-5 pt-5 pb-3">Nosotros</h4>
+            <h4 className="letra-azul display-5 pt-5 pb-3">Nosotros</h4>
             <p className="py-2">
               Somos una inmobiliaria de confianza en Tucumán con años de
               experiencia en el mercado inmobiliario. Nuestro equipo altamente
@@ -61,7 +61,7 @@ const Portada = () => {
 
             <Row>
               <Col lg={4} md={4} sm={12}>
-                <p className="fs-4 fw-semibold">Expertos en Bienes de Raices</p>
+                <p className="fs-4 letra-azul">Expertos en Bienes de Raices</p>
                 <p>
                   Nos esforzamos por ofrecer un servicio excepcional a cada uno
                   de nuestros clientes.
