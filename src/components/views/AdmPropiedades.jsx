@@ -14,8 +14,8 @@ const AdmPropiedades = ({ getProperties, properties }) => {
 
   const onSubmit = async (data) => {
     console.log(data);
-  
-    const imagesArray = data.images.split(',');
+    const imagesArray = data.images ? data.images.split(',') : [];
+
   
     try {
       const res = await axios.post(URL, { ...data, images: imagesArray });

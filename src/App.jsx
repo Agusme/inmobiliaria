@@ -22,8 +22,8 @@ import AdmPropiedades from "./components/views/AdmPropiedades";
 import axios from "../src/config/axiosInit"
 import PropertyEdit from "./components/views/property/PropertyEdit";
 import CompraCasa from "./components/views/CompraCasa";
-import ComproCasaID from "./components/views/CompraCasaID";
-
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import CasaComproId from "./components/views/CasaComproId"
 
 function App() {
   const [isAdmin, setIsAdmin] = useState(false);
@@ -76,7 +76,7 @@ function App() {
           />
           <Route
           path="/compra-casa" element={<CompraCasa properties={properties} getProperties={getProperties} />}/>
-          <Route path="/compra-casa-id/:id" element={<ComproCasaID properties={properties} getProperties={getProperties} />} />
+          <Route path="/compra-casa-id/:id" element={<CasaComproId properties={properties} getProperties={getProperties} />} />
           <Route path="/venta" element={<Venta />} />
           <Route path="/admin" element={<Administrador />} />
           <Route

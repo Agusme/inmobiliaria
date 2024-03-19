@@ -34,7 +34,8 @@ const PropertyEdit = ({ getProperties }) => {
 
   const onSubmit = async (data) => {
     try {
-      const res = await axios.put(`${URL}/${id}`, data);
+      const imagesArray = data.images.split(',');
+      const res = await axios.put(`${URL}/${id}`, { ...data, images: imagesArray });
 
       console.log(res);
 
