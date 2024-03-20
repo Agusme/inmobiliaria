@@ -10,7 +10,7 @@ const CompraCasa = ({ properties }) => {
     <div className="mt-5 pt-5">
       <Container className="p-5">
         <h1 className="text-white text-center display-4">Casas en Venta</h1>
-        <Row>
+        {properties?.length !== 0 ? (<Row>
           {properties.map(
             (property) =>
               property.typeTransaction === "venta" &&
@@ -26,7 +26,7 @@ const CompraCasa = ({ properties }) => {
                       }
                     />
                     <CardBody>
-                      <p className="card-text text-center fw-semibold">
+                      <p className="card-text text-center letra-azul">
                         <ImLocation className="text-warning" />
                         {property.location}{" "}
                       </p>
@@ -56,7 +56,10 @@ const CompraCasa = ({ properties }) => {
                 </Col>
               )
           )}
-        </Row>
+        </Row>): ( <div>
+          <hr className="text-white my-5" />
+          <h1 className="text-white fs-4 m-5 text-center">🏘️No se encontraron Propiedades🏘️🥲</h1>
+        </div>)}
       </Container>
     </div>
   );

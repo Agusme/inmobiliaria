@@ -23,7 +23,7 @@ const Home = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <li className="mx-2 icon">
+              <li className="mx-2 icon linkhover">
               <FaWhatsapp  className="fs-3"/>
               </li>
             </a>
@@ -33,7 +33,7 @@ const Home = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <li className="mx-2 icon">
+              <li className="mx-2 icon linkhover">
                 <FaInstagram className="fs-3" />
               </li>
             </a>
@@ -43,7 +43,7 @@ const Home = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <li className="mx-2 icon">
+              <li className="mx-2 icon linkhover">
                 <FaFacebook  className="fs-3"/>
 
                  
@@ -56,7 +56,7 @@ const Home = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <li className="mx-2 icon">
+              <li className="mx-2 icon linkhover">
               <FaTiktok className="fs-3"/>
               </li>
             </a>

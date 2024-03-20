@@ -34,10 +34,13 @@ const PropertyEdit = ({ getProperties }) => {
 
   const onSubmit = async (data) => {
     try {
-      const imagesArray = data.images.split(',');
+      let imagesArray = [];
+      if (typeof data.images === 'string') {
+        imagesArray = data.images.split(',');
+      } else if (Array.isArray(data.images)) {
+        imagesArray = data.images;
+      }
       const res = await axios.put(`${URL}/${id}`, { ...data, images: imagesArray });
-
-      console.log(res);
 
       if (res.status === STATUS.STATUS_OK) {
         Swal.fire(

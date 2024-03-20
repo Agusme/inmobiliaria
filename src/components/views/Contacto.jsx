@@ -58,10 +58,11 @@ const Contacto = () => {
   return (
     <Fade>
       <div className="bg-contact text-white " id="contacto">
-        <Container className="py-5 ">
+        <Container className="py-5">
         <h4 className=" text-center display-4 py-5">Contacto</h4>
 
-          <Row>
+         <Container>
+         <Row>
             <Col lg={6} md={6} sm={12}>
               <ul className="list-unstyled">
                 <a
@@ -70,12 +71,12 @@ const Contacto = () => {
                   className=" text-white"
                 >
                   {" "}
-                  <li className="link-hover pt-4">
+                  <li className="linkhover pt-4">
                     {" "}
                     <FaWhatsapp className="fs-1 me-3" />Chatea con nosotros
                   </li>
                 </a>
-                <li className="my-4">
+                <li className="my-4 linkhover ">
                   <a
                     href="https://inmobiliaria-bmzpropiedades1.netlify.app/"
                     className="text-white"
@@ -89,7 +90,7 @@ const Contacto = () => {
                     href="tel:+543815633407"
                     className="text-white "
                   >
-                <li className="my-4  ">
+                <li className="my-4 linkhover  ">
                  
                     <IoCallOutline className="fs-1 me-3"  />
 
@@ -181,6 +182,7 @@ const Contacto = () => {
               </Form>
             </Col>
           </Row>
+         </Container>
           <Modal show={showModal} onHide={handleCloseModal}>
             <Modal.Header closeButton>
               <Modal.Title>Consulta Enviada!</Modal.Title>
