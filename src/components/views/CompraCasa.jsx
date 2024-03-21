@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const CompraCasa = ({ properties }) => {
   return (
     <div className="mt-5 pt-5">
-      <Container className="p-5">
+      <Container className="p-5 bg-white letra-azul">
         <h1 className="text-white text-center display-4">Casas en Venta</h1>
         {properties?.length !== 0 ? (<Row>
           {properties.map(

@@ -5,18 +5,18 @@ import { FaFacebook, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
  */
 const Home = () => {
   return (
-    <div className="vh-100  text-white" id="home">
+    <div className=" text-white" id="home">
       <Fade duration={1500}>
-        <Container className="mt-5 pt-5 text-center ">
-          <p className="pt-5 mt-5 fs-5">
+        <Container className=" text-center centered-container ">
+          <p className="pt-5 mt-5 mb-3 poppins-light fs-3">
             ¡Bienvenidos a nuestra Inmobiliaria!{" "}
           </p>
-          <p className="poppins-medium">BMZ PROPIEDADES</p>
+          <p className="poppins-medium ">BMZ PROPIEDADES</p>
 
-          <p className="fs-5 p-2 ">
+          <p className="my-3 ">
             Te ayudamos a encontrar el lugar que estas buscando
           </p>
-          <ul className="list-unstyled d-flex justify-content-center">
+          <ul className="list-unstyled d-flex justify-content-center my-3">
           <a
               href="https://api.whatsapp.com/send/?phone=543815633407&text=Hola%21+Quisiera+saber+m%C3%A1s+informaci%C3%B3n+de+&type=phone_number&app_absent=0"
               style={{ color: "inherit" }}
@@ -24,7 +24,7 @@ const Home = () => {
               rel="noopener noreferrer"
             >
               <li className="mx-2 icon linkhover">
-              <FaWhatsapp  className="fs-3"/>
+              <FaWhatsapp  className="fs-1"/>
               </li>
             </a>
             <a
@@ -34,7 +34,7 @@ const Home = () => {
               rel="noopener noreferrer"
             >
               <li className="mx-2 icon linkhover">
-                <FaInstagram className="fs-3" />
+                <FaInstagram className="fs-1" />
               </li>
             </a>
             <a
@@ -44,7 +44,7 @@ const Home = () => {
               rel="noopener noreferrer"
             >
               <li className="mx-2 icon linkhover">
-                <FaFacebook  className="fs-3"/>
+                <FaFacebook  className="fs-1"/>
 
                  
               </li>
@@ -57,7 +57,7 @@ const Home = () => {
               rel="noopener noreferrer"
             >
               <li className="mx-2 icon linkhover">
-              <FaTiktok className="fs-3"/>
+              <FaTiktok className="fs-1"/>
               </li>
             </a>
           
