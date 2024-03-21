@@ -24,7 +24,7 @@ const Compra = () => {
               <Col lg={3} md={3} sm={12}>
                 {" "}
                 <Card className="bg-imageCard3 bg-img p-5 mb-2">
-                  <Link to="/compra-casa" className="text-decoration-none">
+                  <Link to="/compra-dpto" className="text-decoration-none">
                     <p className="text-white fs-5 fw-bold">Departamento</p>
                   </Link>
                 </Card>

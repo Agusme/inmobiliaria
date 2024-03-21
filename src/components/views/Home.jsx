@@ -6,7 +6,7 @@ import { FaFacebook, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
 const Home = () => {
   return (
     <div className=" text-white" id="home">
-  
+      <Fade duration={1500}>
         <Container className=" text-center centered-container ">
           <p className="pt-5 mt-5 mb-3 poppins-light fs-3">
             ¡Bienvenidos a nuestra Inmobiliaria!{" "}
@@ -66,7 +66,7 @@ const Home = () => {
           {/*             <Whatsapp></Whatsapp>
            */}
         </Container>
-    
+      </Fade>
     </div>
   );
 };

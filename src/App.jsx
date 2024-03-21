@@ -19,11 +19,13 @@ import Alquiler from "./components/views/Alquiler";
 import Administrador from "./components/views/Administrador";
 import { useEffect, useState } from "react";
 import AdmPropiedades from "./components/views/AdmPropiedades";
-import axios from "../src/config/axiosInit"
+import axios from "../src/config/axiosInit";
 import PropertyEdit from "./components/views/property/PropertyEdit";
 import CompraCasa from "./components/views/CompraCasa";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import CasaComproId from "./components/views/CasaComproId"
+import CasaComproId from "./components/views/CasaComproId";
+import DptoCompra from "./components/views/departamento/DptoCompra";
+import DptoCompraId from "./components/views/departamento/DptoCompraId";
 
 function App() {
   const [isAdmin, setIsAdmin] = useState(false);
@@ -43,7 +45,6 @@ function App() {
       console.error("Error fetching properties:", error);
     }
   };
-
 
   return (
     <Router>
@@ -75,8 +76,41 @@ function App() {
             }
           />
           <Route
-          path="/compra-casa" element={<CompraCasa properties={properties} getProperties={getProperties} />}/>
-          <Route path="/compra-casa-id/:id" element={<CasaComproId properties={properties} getProperties={getProperties} />} />
+            path="/compra-casa"
+            element={
+              <CompraCasa
+                properties={properties}
+                getProperties={getProperties}
+              />
+            }
+          />
+          <Route
+            path="/compra-casa-id/:id"
+            element={
+              <CasaComproId
+                properties={properties}
+                getProperties={getProperties}
+              />
+            }
+          />
+           <Route
+            path="/compra-dpto"
+            element={
+              <DptoCompra
+                properties={properties}
+                getProperties={getProperties}
+              />
+            }
+          />
+          <Route
+            path="/compra-dpto-id/:id"
+            element={
+              <DptoCompraId
+                properties={properties}
+                getProperties={getProperties}
+              />
+            }
+          />
           <Route path="/venta" element={<Venta />} />
           <Route path="/admin" element={<Administrador />} />
           <Route
@@ -93,7 +127,7 @@ function App() {
             }
           />
 
-<Route
+          <Route
             path="/property/edit/:id"
             element={
               isAdmin ? (

@@ -177,7 +177,10 @@ backdrop-filter: blur(5px);
   display: block;
 }
 .card-houses{
-  min-height: 350px;}
+  min-height: 350px;
+
+}
+
 
 .custom-btn.btn {
     background-color: #1D3251 ;

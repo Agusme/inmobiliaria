@@ -59,7 +59,7 @@ const Administrador = () => {
               />
             </Form.Group>
             <Button
-              className="btn btn-primary my-3"
+              className="btn btn-mas custom-btn my-3"
               onClick={handleLogin}
 
             >

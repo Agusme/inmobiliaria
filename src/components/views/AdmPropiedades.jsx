@@ -6,22 +6,21 @@ import Swal from "sweetalert2";
 import Property from "./property/Property";
 
 const AdmPropiedades = ({ getProperties, properties }) => {
-  console.log(properties)
-  
-    const { register, handleSubmit, reset } = useForm();
+  console.log(properties);
+
+  const { register, handleSubmit, reset } = useForm();
 
   const URL = import.meta.VITE_API_BMZ;
 
   const onSubmit = async (data) => {
     console.log(data);
-    const imagesArray = data.images ? data.images.split(',') : [];
+    const imagesArray = data.images ? data.images.split(",") : [];
 
-  
     try {
       const res = await axios.post(URL, { ...data, images: imagesArray });
-      
+
       console.log(res);
-  
+
       if (res.status === 201) {
         Swal.fire("Creada", "La propiedad fue creada con éxito");
         reset();
@@ -36,37 +35,37 @@ const AdmPropiedades = ({ getProperties, properties }) => {
       <Container className="py-5 my-5">
         <div className="bg-white py-5">
           <h1 className="mt-3 text-center"> Administración de propiedades</h1>
-       {properties?.length !== 0?(
-           <Table bordered hover responsive className="align-middle mt-3 mx-4">
-           <thead>
-             <tr>
-               <th>Id</th>
-               <th>Type Property</th>
-               <th>Type Transaction</th>
-               <th>Bathroom</th>
-               <th>Bedroom</th>
-               <th>Location</th>
-               <th>Description</th>
-               <th>Map</th>
-               <th>Images</th>
-               <th>Acciones</th>
-             </tr>
-           </thead>
-           <tbody>
-            {properties?.map((property)=>(
-                <Property
-                key={property._id}
-                properties={property}
-                getProperties={getProperties}
-                />
-            ))}
-           </tbody>
-         </Table>
-       ): (
-        <div className="no-products-found d-flex align-items-center justify-content-center">
-          <h1>🏘️No se encontraron Propiedades🏘️</h1>
-        </div>
-      )}
+          {properties?.length !== 0 ? (
+            <Table bordered hover responsive className="align-middle mt-3 mx-4">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Type Property</th>
+                  <th>Type Transaction</th>
+                  <th>Bathroom</th>
+                  <th>Bedroom</th>
+                  <th>Location</th>
+                  <th>Description</th>
+                  <th>Map</th>
+                  <th>Images</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                {properties?.map((property) => (
+                  <Property
+                    key={property._id}
+                    properties={property}
+                    getProperties={getProperties}
+                  />
+                ))}
+              </tbody>
+            </Table>
+          ) : (
+            <div className="no-products-found d-flex align-items-center justify-content-center">
+              <h1>🏘️No se encontraron Propiedades🏘️</h1>
+            </div>
+          )}
         </div>
         <div className="bg-white mb-5 pt-5">
           <h3 className="my-3 text-center">Añadir Propiedad 🏘️</h3>
@@ -79,8 +78,8 @@ const AdmPropiedades = ({ getProperties, properties }) => {
                 >
                   <Col lg={4} md={4} sm={12}>
                     <Form.Label>
-                      <span className="fw-semibold">Type Property </span> (casa-
-                      departamento- terreno -local){" "}
+                      <span className="fw-semibold">Tipo de propiedad</span>{" "}
+                      (Casa- Departamento- Terreno -Local){" "}
                     </Form.Label>
                   </Col>
                   <Col lg={8} md={8} sm={12}>
@@ -91,6 +90,9 @@ const AdmPropiedades = ({ getProperties, properties }) => {
                       maxLength={30}
                       required
                     />
+                    <Form.Text className="text-muted ">
+                      Usa mayúscula para empezar{" "}
+                    </Form.Text>
                   </Col>
                 </Form.Group>
                 <Form.Group
@@ -99,8 +101,8 @@ const AdmPropiedades = ({ getProperties, properties }) => {
                 >
                   <Col lg={4} md={4} sm={12}>
                     <Form.Label>
-                      <span className="fw-semibold">Type Transaction </span>{" "}
-                      (venta - alquiler)
+                      <span className="fw-semibold">Tipo de transacción </span>{" "}
+                      (Venta - Alquiler)
                     </Form.Label>
                   </Col>
                   <Col lg={8} md={8} sm={12}>
@@ -110,10 +112,16 @@ const AdmPropiedades = ({ getProperties, properties }) => {
                       maxLength={30}
                       required
                     />
+                      <Form.Text className="text-muted ">
+                      Usa mayúscula para empezar{" "}
+                    </Form.Text>
                   </Col>
                 </Form.Group>
-           
-                <Form.Group className="mb-3 d-flex flex-md-row flex-column " controlId="formBathroom">
+
+                <Form.Group
+                  className="mb-3 d-flex flex-md-row flex-column "
+                  controlId="formBathroom"
+                >
                   <Col lg={4} md={4} sm={12}>
                     <Form.Label>
                       <span className="fw-semibold">Baños </span>
@@ -121,7 +129,7 @@ const AdmPropiedades = ({ getProperties, properties }) => {
                   </Col>
                   <Col lg={8} md={8} sm={12}>
                     <Form.Control
-                    type="number"
+                      type="number"
                       {...register("bathroom")}
                       placeholder="Ingrese la cantidad de baños"
                       maxLength={30}
@@ -129,7 +137,10 @@ const AdmPropiedades = ({ getProperties, properties }) => {
                     />
                   </Col>
                 </Form.Group>
-                <Form.Group className="mb-3 d-flex flex-md-row flex-column " controlId="formBedroom">
+                <Form.Group
+                  className="mb-3 d-flex flex-md-row flex-column "
+                  controlId="formBedroom"
+                >
                   <Col lg={4} md={4} sm={12}>
                     <Form.Label>
                       <span className="fw-semibold">Habitaciones </span>
@@ -137,7 +148,7 @@ const AdmPropiedades = ({ getProperties, properties }) => {
                   </Col>
                   <Col lg={8} md={8} sm={12}>
                     <Form.Control
-                    type="number"
+                      type="number"
                       {...register("bedroom")}
                       placeholder="Ingrese la cantidad de habitaciones"
                       maxLength={30}
@@ -145,7 +156,10 @@ const AdmPropiedades = ({ getProperties, properties }) => {
                     />
                   </Col>
                 </Form.Group>
-                <Form.Group className="mb-3 d-flex flex-md-row flex-column " controlId="formLocation">
+                <Form.Group
+                  className="mb-3 d-flex flex-md-row flex-column "
+                  controlId="formLocation"
+                >
                   <Col lg={4} md={4} sm={12}>
                     <Form.Label>
                       <span className="fw-semibold">Location </span>
@@ -160,7 +174,10 @@ const AdmPropiedades = ({ getProperties, properties }) => {
                     />
                   </Col>
                 </Form.Group>
-                <Form.Group className="mb-3 d-flex flex-md-row flex-column " controlId="formDescription">
+                <Form.Group
+                  className="mb-3 d-flex flex-md-row flex-column "
+                  controlId="formDescription"
+                >
                   <Col lg={4} md={4} sm={12}>
                     <Form.Label>
                       <span className="fw-semibold">Description </span>
@@ -168,14 +185,17 @@ const AdmPropiedades = ({ getProperties, properties }) => {
                   </Col>
                   <Col lg={8} md={8} sm={12}>
                     <Form.Control
-                    {...register("description")}
-                    placeholder="Describa  la propiedad"
-                    maxLength={600}
-                    required 
+                      {...register("description")}
+                      placeholder="Describa  la propiedad"
+                      maxLength={600}
+                      required
                     />
                   </Col>
                 </Form.Group>
-                <Form.Group className="mb-3 d-flex flex-md-row flex-column " controlId="formMap">
+                <Form.Group
+                  className="mb-3 d-flex flex-md-row flex-column "
+                  controlId="formMap"
+                >
                   <Col lg={4} md={4} sm={12}>
                     <Form.Label>
                       <span className="fw-semibold">Map </span>
@@ -183,32 +203,36 @@ const AdmPropiedades = ({ getProperties, properties }) => {
                   </Col>
                   <Col lg={8} md={8} sm={12}>
                     <Form.Control
-                    {...register("map")}
-                    placeholder="Ingrese el mapa"
-                    required 
-                    
+                      {...register("map")}
+                      placeholder="Ingrese el mapa"
+                      required
                     />
                   </Col>
                 </Form.Group>
-                <Form.Group className="mb-3 d-flex flex-md-row flex-column " controlId="formImages">
+                <Form.Group
+                  className="mb-3 d-flex flex-md-row flex-column "
+                  controlId="formImages"
+                >
                   <Col lg={4} md={4} sm={12}>
                     <Form.Label>
                       <span className="fw-semibold">Images </span>
                     </Form.Label>
                   </Col>
                   <Col lg={8} md={8} sm={12}>
-                    <Form.Control
-                    {...register("images")}
-                    required 
-                    />
-                     <Form.Text className="text-muted">
-      Puedes ingresar varias URLs separadas por comas.
-    </Form.Text>
+                    <Form.Control {...register("images")} required />
+                    <Form.Text className="text-muted">
+                      Puedes ingresar varias URLs separadas por comas.
+                    </Form.Text>
                   </Col>
                 </Form.Group>
               </Row>
               <div className="d-grid gap-2 d-md-flex justify-content-md-end">
-                <Button  type="submit" className="me-md-2 my-3">GUARDAR</Button>
+                <Button
+                  type="submit"
+                  className="me-md-2 my-3 btn btn-mas custom-btn"
+                >
+                  GUARDAR
+                </Button>
               </div>
             </Form>
           </div>
