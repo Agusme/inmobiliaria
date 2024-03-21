@@ -28,11 +28,11 @@ const CompraCasaID = () => {
 
   return (
     <div className="py-5">
-      <Container className="my-5 d-flex justify-content-center align-items-center">
+      <Container className="mt-5 d-flex justify-content-center align-items-center">
         {property ? (
           <Container className="bg-white pb-5">
-            <div className="px-5 mx-5">
-              <h2 className="letra-azul fs-3 py-2 poppins-light">
+            <div className="px-lg-5 mx-5">
+              <h2 className="letra-azul fs-3 py-2 display-5">
                 {property.location}
               </h2>
               <Carousel
@@ -42,7 +42,7 @@ const CompraCasaID = () => {
                 autoPlay
                 infiniteLoop
                 thumbWidth={70}
-                className="carousel-principal"
+                className="carousel-principal px-lg-5 "
               >
                 {Array.isArray(property.images) &&
                   property.images.map((image, index) => (
