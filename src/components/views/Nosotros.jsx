@@ -10,39 +10,39 @@ const Portada = () => {
            
             <h4 className="display-4 letra-azul py-5">Nuestros Servicios</h4>
             <Row>
-              <Col lg={3} md={3} sm={6}>
+              <Col lg={3} md={6} sm={6}>
                 <Link
                   to="/compra"
                   smooth={true}
                   duration={500}
                   className="text-decoration-none"
                 >
-                  <Card className="bg-image bg-img p-5 mb-2">
+                  <Card className="bg-image bg-img py-5 mb-2">
                     <p className="text-white fw-semibold">Compra</p>
                   </Card>
                 </Link>
               </Col>
-              <Col lg={3} md={3} sm={6}>
+              <Col lg={3} md={6} sm={6}>
                 {" "}
-                <Card className="bg-imageCard1 bg-img p-5 mb-2">
+                <Card className="bg-imageCard1 bg-img py-5 mb-2">
                   <Link to="/alquiler" className="text-decoration-none">
                     {" "}
                     <p className="text-white fw-semibold">Alquiler</p>
                   </Link>
                 </Card>
               </Col>
-              <Col lg={3} md={3} sm={6}>
+              <Col lg={3} md={6} sm={6}>
                 {" "}
-                <Card className="bg-imageCard2 bg-img p-5 mb-2">
+                <Card className="bg-imageCard2 bg-img py-5 mb-2">
                   <Link to="/venta" className="text-decoration-none">
                     {" "}
                     <p className="text-white fw-semibold">Venta</p>
                   </Link>
                 </Card>
               </Col>
-              <Col lg={3} md={3} sm={6}>
+              <Col lg={3} md={6} sm={6}>
                 {" "}
-                <Card className="bg-imageCard3 bg-img p-5 mb-2">
+                <Card className="bg-imageCard3 bg-img py-5 mb-2">
                   <Link to="/asesoramiento" className="text-decoration-none">
                     {" "}
                     <p className="text-white fw-semibold">Asesoramiento</p>
