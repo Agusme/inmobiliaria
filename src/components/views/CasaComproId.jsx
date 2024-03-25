@@ -8,6 +8,8 @@ import { Carousel } from "react-responsive-carousel";
 import { TbBathFilled } from "react-icons/tb";
 import { IoBed, IoCallOutline } from "react-icons/io5";
 import { FaWhatsapp } from "react-icons/fa";
+import { Fade } from "react-awesome-reveal";
+
 const CompraCasaID = () => {
   const URL = import.meta.env.VITE_API_BMZ;
   const { id } = useParams();
@@ -79,7 +81,8 @@ const CompraCasaID = () => {
                   </p>
                   <p className="letra-azul">{property.description}</p>
                   <Col lg={6} md={6} sm={12}>
-              <ul className="list-unstyled d-flex letra-azul">
+                    <Fade>
+                    <ul className="list-unstyled d-flex letra-azul">
        <p className="pt-4 mx-3">Más info.</p>
                 <a
                   href="https://api.whatsapp.com/send/?phone=543815633407&text=Hola%21+Quisiera+saber+m%C3%A1s+informaci%C3%B3n+de+&type=phone_number&app_absent=0"
@@ -105,6 +108,8 @@ const CompraCasaID = () => {
             
 
               </ul>
+                    </Fade>
+  
               </Col>
                 </Col>
                 <Col lg={6} md={6} sm={12}>
