@@ -31,7 +31,7 @@ const CompraCasaID = () => {
       <Container className="mt-5 d-flex justify-content-center align-items-center">
         {property ? (
           <Container className="bg-white pb-5">
-            <div className="px-lg-5 mx-5">
+            <div className="px-lg-5 mx-lg-5 ">
               <h2 className="letra-azul fs-3 py-2 display-5">
                 {property.location}
               </h2>

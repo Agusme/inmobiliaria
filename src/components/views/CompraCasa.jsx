@@ -57,8 +57,8 @@ const CompraCasa = ({ properties }) => {
               )
           )}
         </Row>): ( <div>
-          <hr className="text-white my-5" />
-          <h1 className="text-white fs-4 m-5 text-center">🏘️No se encontraron Propiedades🏘️🥲</h1>
+          <hr className="letra-azul my-5" />
+          <h1 className="letra-azul fs-4 m-5 text-center">🏘️No se encontraron Propiedades🏘️🥲</h1>
         </div>)}
       </Container>
     </div>
