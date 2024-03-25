@@ -169,7 +169,6 @@ const AdmPropiedades = ({ getProperties, properties }) => {
                     <Form.Control
                       {...register("location")}
                       placeholder="Ingrese la ubicacion de la propiedad"
-                      maxLength={30}
                       required
                     />
                   </Col>

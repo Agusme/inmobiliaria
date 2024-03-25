@@ -1,16 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import axios from "../../../config/axiosInit"
-import { Col, Container, Row } from 'react-bootstrap';
+import {  Col, Container,  Row } from "react-bootstrap";
+import { TbBathFilled } from "react-icons/tb";
+import { IoBed, IoCallOutline } from "react-icons/io5";
+import { FaWhatsapp } from "react-icons/fa";
 import { Fade } from "react-awesome-reveal";
-
-import { IoBed, IoCallOutline } from 'react-icons/io5';
-import { FaWhatsapp } from 'react-icons/fa';
 import { Carousel } from 'react-responsive-carousel';
-import { TbBathFilled } from 'react-icons/tb';
-const DptoCompraId = () => {
+
+const TerrenoId = () => {
     const URL = import.meta.env.VITE_API_BMZ;
     const { id } = useParams();
     const [property, setProperty] = useState(null);
@@ -25,9 +24,9 @@ const DptoCompraId = () => {
           console.log(error);
         }
       };
-    
     return (
-        <div className="py-5">
+        <div>
+    <div className="py-5">
         <Container className="mt-5 d-flex justify-content-center align-items-center">
           {property ? (
             <Container className="bg-white pb-5">
@@ -130,8 +129,8 @@ const DptoCompraId = () => {
             <p className="text-white"> Loading...</p>
           )}
         </Container>
-      </div>
+      </div>        </div>
     );
 };
 
-export default DptoCompraId;
+export default TerrenoId;

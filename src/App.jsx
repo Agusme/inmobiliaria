@@ -26,6 +26,10 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import CasaComproId from "./components/views/CasaComproId";
 import DptoCompra from "./components/views/departamento/DptoCompra";
 import DptoCompraId from "./components/views/departamento/DptoCompraId";
+import Terrenos from "./components/views/terrenos/Terrenos";
+import TerrenoId from "./components/views/terrenos/TerrenoId";
+import DptoAlquilerId from "./components/views/departamento/DptoAlquilerId";
+import DptoAlquiler from "./components/views/departamento/DptoAlquiler";
 
 function App() {
   const [isAdmin, setIsAdmin] = useState(false);
@@ -106,6 +110,42 @@ function App() {
             path="/compra-dpto-id/:id"
             element={
               <DptoCompraId
+                properties={properties}
+                getProperties={getProperties}
+              />
+            }
+          />
+           <Route
+            path="/compra-terreno"
+            element={
+              <Terrenos
+                properties={properties}
+                getProperties={getProperties}
+              />
+            }
+          />
+             <Route
+            path="/compra-terreno-id/:id"
+            element={
+              <TerrenoId
+                properties={properties}
+                getProperties={getProperties}
+              />
+            }
+          />
+           <Route
+            path="/alquiler-dpto"
+            element={
+              <DptoAlquiler
+                properties={properties}
+                getProperties={getProperties}
+              />
+            }
+          />
+           <Route
+            path="/alquiler-dpto-id/:id"
+            element={
+              <DptoAlquilerId
                 properties={properties}
                 getProperties={getProperties}
               />

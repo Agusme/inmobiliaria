@@ -1,16 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import axios from "../../../config/axiosInit"
-import { Col, Container, Row } from 'react-bootstrap';
+import {Badge, Col, Container, Row } from "react-bootstrap";
+import { Carousel } from 'react-responsive-carousel';
+import { TbBathFilled } from "react-icons/tb";
+import { IoBed, IoCallOutline } from "react-icons/io5";
+import { FaWhatsapp } from "react-icons/fa";
 import { Fade } from "react-awesome-reveal";
 
-import { IoBed, IoCallOutline } from 'react-icons/io5';
-import { FaWhatsapp } from 'react-icons/fa';
-import { Carousel } from 'react-responsive-carousel';
-import { TbBathFilled } from 'react-icons/tb';
-const DptoCompraId = () => {
+const DptoAlquilerId = () => {
     const URL = import.meta.env.VITE_API_BMZ;
     const { id } = useParams();
     const [property, setProperty] = useState(null);
@@ -25,7 +24,6 @@ const DptoCompraId = () => {
           console.log(error);
         }
       };
-    
     return (
         <div className="py-5">
         <Container className="mt-5 d-flex justify-content-center align-items-center">
@@ -34,7 +32,11 @@ const DptoCompraId = () => {
               <div className="px-lg-5 mx-lg-5 ">
                 <h2 className="letra-azul fs-3 py-2 display-5">
                   {property.location}
+                  <Badge bg="warning" className="m-3">
+    TEMPORARIO
+  </Badge>
                 </h2>
+           
                 <Carousel
                   showThumbs={true}
                   showStatus={false}
@@ -62,8 +64,11 @@ const DptoCompraId = () => {
                   <Col lg={6} md={6} sm={12}>
                     <p className="letra-azul fs-4  poppins-light">
                       Descripción de la propiedad
+                    
                     </p>
+        
                     <p className="letra-azul poppins-light fs-6">
+          
                       {property.bathroom >= 1 && (
                         <>
                           <TbBathFilled className="letra-azul mx-3" />
@@ -134,4 +139,4 @@ const DptoCompraId = () => {
     );
 };
 
-export default DptoCompraId;
+export default DptoAlquilerId;
