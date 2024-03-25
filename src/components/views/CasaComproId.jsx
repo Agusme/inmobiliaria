@@ -50,10 +50,10 @@ const CompraCasaID = () => {
                   property.images.map((image, index) => (
                     <div
                       key={index}
-                      className="carousel-casa  d-flex justify-content-center align-items-center"
+                      className="carousel-casa  px-lg-5  d-flex justify-content-center align-items-center"
                     >
                       <img
-                        className="img-fluid w-100"
+                        className="img-fluid "
                         src={image}
                         alt={`Image ${index}`}
                       />
@@ -82,7 +82,7 @@ const CompraCasaID = () => {
                   <p className="letra-azul">{property.description}</p>
                   <Col lg={6} md={6} sm={12}>
                     <Fade>
-                    <ul className="list-unstyled d-flex letra-azul">
+                    <ul className="list-unstyled d-flex letra-azul fs-5">
        <p className="pt-4 mx-3">Más info.</p>
                 <a
                   href="https://api.whatsapp.com/send/?phone=543815633407&text=Hola%21+Quisiera+saber+m%C3%A1s+informaci%C3%B3n+de+&type=phone_number&app_absent=0"
@@ -129,7 +129,7 @@ const CompraCasaID = () => {
             </div>
           </Container>
         ) : (
-          <p>Loading...</p>
+          <p className="text-white"> Loading...</p>
         )}
       </Container>
     </div>

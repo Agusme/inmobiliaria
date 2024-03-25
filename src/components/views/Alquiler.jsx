@@ -13,13 +13,13 @@ const Alquiler = () => {
                 <Col lg={6} md={6} sm={12}>
                   {" "}
                   <Card className="bg-imageCard3 bg-img p-5 mb-2">
-                    <p className="text-white fs-3 fw-bold">Departamento</p>
+                    <p className="text-white fs-3">Departamento</p>
                   </Card>
                 </Col>
                 <Col lg={6} md={6} sm={12}>
                   {" "}
                   <Card className="bg-imageCard2 bg-img p-5 mb-2">
-                    <p className="text-white fs-3 fw-bold">Local</p>
+                    <p className="text-white fs-3">Local</p>
                   </Card>
                 </Col>
               </Row>

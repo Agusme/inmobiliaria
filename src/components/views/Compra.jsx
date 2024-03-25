@@ -12,36 +12,36 @@ const Compra = () => {
         <Container fluid className="bg-white py-5 mb-5">
           <Container>
             <Row className="text-center">
-              <Col lg={3} md={3} sm={12}>
+              <Col lg={3} md={6} sm={12}>
                 {" "}
                 <Card className="bg-imageCasa bg-img p-5 mb-2">
                   <Link to="/compra-casa" className="text-decoration-none">
                     {" "}
-                    <p className="text-white fs-5 fw-bold">Casa</p>
+                    <p className="text-white fs-5 ">Casa</p>
                   </Link>
                 </Card>
               </Col>
-              <Col lg={3} md={3} sm={12}>
+              <Col lg={3} md={6} sm={12}>
                 {" "}
                 <Card className="bg-imageCard3 bg-img p-5 mb-2">
                   <Link to="/compra-dpto" className="text-decoration-none">
-                    <p className="text-white fs-5 fw-bold">Departamento</p>
+                    <p className="text-white fs-5 ">Departamento</p>
                   </Link>
                 </Card>
               </Col>
-              <Col lg={3} md={3} sm={12}>
+              <Col lg={3} md={6} sm={12}>
                 {" "}
                 <Card className="bg-terreno bg-img p-5 mb-2">
                   <Link to="/compra-casa" className="text-decoration-none">
-                    <p className="text-white fs-5 fw-bold">Terreno</p>
+                    <p className="text-white fs-5 ">Terreno</p>
                   </Link>
                 </Card>
               </Col>
-              <Col lg={3} md={3} sm={12}>
+              <Col lg={3} md={6} sm={12}>
                 {" "}
                 <Card className="bg-imageCard2 bg-img p-5 mb-3">
                   <Link to="/compra-casa" className="text-decoration-none">
-                    <p className="text-white fs-5 fw-bold">Local</p>
+                    <p className="text-white fs-5 ">Local</p>
                   </Link>{" "}
                 </Card>
               </Col>

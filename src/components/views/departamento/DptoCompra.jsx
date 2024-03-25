@@ -18,7 +18,7 @@ const DptoCompra = ({ properties }) => {
               property.typeTransaction === "Venta" &&
               property.typeProperty === "Departamento" && (
                 <Col key={property._id} lg={3} md={3} sm={6}>
-                  <Card className="text-center my-2 card-houses card-border">
+                  <Card className="text-center my-2 card-houses">
                     <img
                       className="property-image text-center"
                       src={
@@ -29,20 +29,20 @@ const DptoCompra = ({ properties }) => {
                     />
                     <CardBody>
                       <p className="card-text text-center letra-azul">
-                        <ImLocation className="text-warning" />
+                        <ImLocation className="letra-azul" />
                         {property.location}{" "}
                       </p>
                       <hr />
                       <p className="text-center poppins-light">
                         {property.bathroom >= 1 && (
                           <>
-                            <TbBathFilled className="text-warning mx-3" />
+                            <TbBathFilled className="letra-azul mx-3" />
                             {property.bathroom}
                           </>
                         )}
                         {property.bedroom >= 1 && (
                           <>
-                            <IoBed className="text-warning mx-3" />
+                            <IoBed className="letra-azul mx-3" />
                             {property.bedroom}
                           </>
                         )}
