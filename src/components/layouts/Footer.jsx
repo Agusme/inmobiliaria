@@ -1,13 +1,15 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { FaFacebook, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
+import BMZLOGO from "../../assets/BMZBLANCO.png"
 const Footer = () => {
   return (
     <Container fluid className="bg-black text-center text-white">
       <Row>
         <Col lg={4} md={4} sm={12}>
-          <p className="d-inline-block align-top pt-3 fs-2">BMZ</p>
+          <p className="d-inline-block align-top pt-3 fs-2"> 
+          <img src={BMZLOGO} alt="logo" className="logo-navbar" />  
+          </p>
           <p>M.P. 111 | 112</p>
               </Col>
         <Col lg={4} md={4} sm={12}>

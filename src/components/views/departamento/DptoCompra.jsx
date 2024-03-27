@@ -18,9 +18,10 @@ const DptoCompra = ({ properties }) => {
               property.typeTransaction === "Venta" &&
               property.typeProperty === "Departamento" && (
                 <Col key={property._id} lg={3} md={3} sm={6}>
-                  <Card className="text-center my-2 card-houses">
+                  <Card className="text-center my-2 card-houses"                      
+>
                     <img
-                      className="property-image text-center"
+                      className="property-image text-center "
                       src={
                         Array.isArray(property.images)
                           ? property.images[0]

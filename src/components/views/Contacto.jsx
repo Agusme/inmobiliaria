@@ -12,7 +12,7 @@ import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { IoCallOutline } from "react-icons/io5";
 import { TbWorld } from "react-icons/tb";
-
+import LOGOBMZ from "../../assets/BMZBLANCO.png"
 const Contacto = () => {
   const {
     register,
@@ -60,11 +60,12 @@ const Contacto = () => {
       <div className="bg-contact text-white " id="contacto">
         <Container className="py-5">
         <h4 className=" text-center display-4 py-5">Contacto</h4>
-
+        
          <Container>
          <Row>
             <Col lg={6} md={6} sm={12}>
               <ul className="list-unstyled">
+              
                 <a
                   href="https://api.whatsapp.com/send/?phone=543815633407&text=Hola%21+Quisiera+saber+m%C3%A1s+informaci%C3%B3n+de+&type=phone_number&app_absent=0"
                   target="_blank"
@@ -97,8 +98,15 @@ const Contacto = () => {
                     Llamar 3815633407
                 </li>
                 </a>
+              
+             
+            
 
               </ul>
+              <div className="d-flex justify-content-center align-items-center"> 
+            <img src={LOGOBMZ} alt="logo" className="img-fluid mt-5  w-25" />
+
+            </div>
             </Col>
             <Col lg={6} md={6} sm={12}>
               <Form onSubmit={handleSubmit(onSubmit)}>

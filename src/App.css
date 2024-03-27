@@ -16,6 +16,10 @@ body {
 
 
 }
+.logo-navbar{
+  width: 110px;
+  height: 40px;
+}
 .bg-image{
   background-image: url("../src/assets/card.jpeg");
   background-size: cover;
@@ -188,6 +192,7 @@ backdrop-filter: blur(5px);
 .carousel-casa img{
   height: 400px;
 }
+
 
 @media all and (min-width: 480px) and (max-width: 768px) {
   .poppins-medium {

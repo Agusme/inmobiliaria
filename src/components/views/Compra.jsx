@@ -40,7 +40,7 @@ const Compra = () => {
               <Col lg={3} md={6} sm={12}>
                 {" "}
                 <Card className="bg-imageCard2 bg-img p-5 mb-3">
-                  <Link to="/compra-casa" className="text-decoration-none">
+                  <Link to="/compra-local" className="text-decoration-none">
                     <p className="text-white fs-5 ">Local</p>
                   </Link>{" "}
                 </Card>

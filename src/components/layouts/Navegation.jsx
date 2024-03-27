@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
-
+import BMZLOGO from "../../assets/BMZBLANCO.png"
 const Navegation = () => {
   const [expanded, setExpanded] = useState(false);
   const navbarRef = useRef(null);
@@ -38,8 +38,7 @@ const Navegation = () => {
         <Navbar.Brand>
           <ScrollLink to="home" smooth={true} duration={500}>
             <Link to="/" className="text-decoration-none">
-              <p className="text-light fs-2 poppins-light">BMZ</p>
-            </Link>
+              <img src={BMZLOGO} alt="logo" className="logo-navbar" />            </Link>
           </ScrollLink>
         </Navbar.Brand>
         <Navbar.Toggle

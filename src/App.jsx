@@ -30,6 +30,8 @@ import Terrenos from "./components/views/terrenos/Terrenos";
 import TerrenoId from "./components/views/terrenos/TerrenoId";
 import DptoAlquilerId from "./components/views/departamento/DptoAlquilerId";
 import DptoAlquiler from "./components/views/departamento/DptoAlquiler";
+import Local from "./components/views/local/Local";
+import LocalId from "./components/views/local/LocalId";
 
 function App() {
   const [isAdmin, setIsAdmin] = useState(false);
@@ -146,6 +148,24 @@ function App() {
             path="/alquiler-dpto-id/:id"
             element={
               <DptoAlquilerId
+                properties={properties}
+                getProperties={getProperties}
+              />
+            }
+          />
+              <Route
+            path="/compra-local"
+            element={
+              <Local
+                properties={properties}
+                getProperties={getProperties}
+              />
+            }
+          />
+             <Route
+            path="/compra-local-id/:id"
+            element={
+              <LocalId
                 properties={properties}
                 getProperties={getProperties}
               />
