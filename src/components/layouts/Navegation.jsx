@@ -37,7 +37,7 @@ const Navegation = () => {
         <Navbar.Brand>
           <ScrollLink to="home" smooth={true} duration={500}>
             <Link to="/" className="text-decoration-none">
-         <p className="text-white fs-3 bg-bordeau py-1 px-2 rounded-2 linkhover">BMZ </p>        </Link>
+         <p className="text-white fs-3 bg-bordeau py-1 px-2  linkhover">BMZ </p>        </Link>
           </ScrollLink>
         </Navbar.Brand>
         <Navbar.Toggle

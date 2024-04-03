@@ -10,7 +10,7 @@ const Footer = () => {
         
         <Link to="/" className="text-decoration-none text-light">
 
-          <p className="d-inline-block align-top p-1 m-3 lead text-white bg-bordeau rounded-2 linkhover">
+          <p className="d-inline-block align-top p-1 m-3 lead text-white bg-bordeau  linkhover">
             BMZ{" "}
           </p>
           </Link>
