@@ -7,34 +7,50 @@ const Footer = () => {
     <Container fluid className="bg-black text-center text-white">
       <Row>
         <Col lg={4} md={4} sm={12}>
-          <p className="d-inline-block align-top pt-3 fs-2"> 
-BMZ          </p>
+        
+        <Link to="/" className="text-decoration-none text-light">
+
+          <p className="d-inline-block align-top p-1 m-3 lead text-white bg-bordeau rounded-2 linkhover">
+            BMZ{" "}
+          </p>
+          </Link>
           <p>M.P. 111 | 112</p>
-              </Col>
+        </Col>
         <Col lg={4} md={4} sm={12}>
           <p className="d-inline-block align-top pt-3 fw-semibold">Páginas</p>
           <ul className="list-unstyled">
-            <Link to="/compra" className="text-decoration-none text-light">            <li className=" poppins-light linkhover">Compra</li>
-</Link>
-<Link to="/venta" className="text-decoration-none text-light">            <li className=" poppins-light linkhover">Venta</li>
-</Link>
-<Link to="/alquiler" className="text-decoration-none text-light">            <li className=" poppins-light linkhover">Alquiler</li>
-</Link>
-<Link to="/asesoramiento" className="text-decoration-none text-light">            <li className=" poppins-light linkhover">Asesoramiento</li>
-</Link>
+            <Link to="/compra" className="text-decoration-none text-light">
+              {" "}
+              <li className=" poppins-light linkhover">Compra</li>
+            </Link>
+            <Link to="/venta" className="text-decoration-none text-light">
+              {" "}
+              <li className=" poppins-light linkhover">Venta</li>
+            </Link>
+            <Link to="/alquiler" className="text-decoration-none text-light">
+              {" "}
+              <li className=" poppins-light linkhover">Alquiler</li>
+            </Link>
+            <Link
+              to="/asesoramiento"
+              className="text-decoration-none text-light"
+            >
+              {" "}
+              <li className=" poppins-light linkhover">Asesoramiento</li>
+            </Link>
           </ul>
         </Col>
         <Col lg={4} md={4} sm={12}>
           <p className="d-inline-block align-top pt-3 fw-semibold">Redes</p>
           <ul className="list-unstyled d-flex justify-content-center">
-          <a
+            <a
               href="https://api.whatsapp.com/send/?phone=543815633407&text=Hola%21+Quisiera+saber+m%C3%A1s+informaci%C3%B3n+de+&type=phone_number&app_absent=0"
               style={{ color: "inherit" }}
               target="_blank"
               rel="noopener noreferrer"
             >
               <li className="mx-2 icon">
-              <FaWhatsapp  className="fs-3"/>
+                <FaWhatsapp className="fs-3 linkhover" />
               </li>
             </a>
             <a
@@ -44,7 +60,7 @@ BMZ          </p>
               rel="noopener noreferrer"
             >
               <li className="mx-2 icon">
-                <FaInstagram className="fs-3" />
+                <FaInstagram className="fs-3 linkhover" />
               </li>
             </a>
             <a
@@ -54,9 +70,7 @@ BMZ          </p>
               rel="noopener noreferrer"
             >
               <li className="mx-2 icon">
-                <FaFacebook  className="fs-3"/>
-
-                 
+                <FaFacebook className="fs-3 linkhover" />
               </li>
             </a>
 
@@ -67,11 +81,9 @@ BMZ          </p>
               rel="noopener noreferrer"
             >
               <li className="mx-2 icon">
-              <FaTiktok className="fs-3"/>
+                <FaTiktok className="fs-3 linkhover" />
               </li>
             </a>
-          
-
           </ul>
         </Col>
       </Row>

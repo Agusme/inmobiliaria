@@ -14,7 +14,7 @@ const Home = () => {
           <p className="poppins-medium ">BMZ PROPIEDADES</p>
 
           <p className="my-3 ">
-            Te ayudamos a encontrar el lugar que estas buscando
+            Te ayudamos a encontrar  el lugarque estas buscando
           </p>
           <ul className="list-unstyled d-flex justify-content-center my-3">
           <a
