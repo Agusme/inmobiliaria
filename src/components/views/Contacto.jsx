@@ -12,7 +12,7 @@ import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { IoCallOutline } from "react-icons/io5";
 import { TbWorld } from "react-icons/tb";
-import LOGOBMZ from "../../assets/BMZBLANCO.png"
+
 const Contacto = () => {
   const {
     register,
@@ -103,10 +103,7 @@ const Contacto = () => {
             
 
               </ul>
-              <div className="d-flex justify-content-center align-items-center"> 
-            <img src={LOGOBMZ} alt="logo" className="img-fluid mt-5  w-25" />
 
-            </div>
             </Col>
             <Col lg={6} md={6} sm={12}>
               <Form onSubmit={handleSubmit(onSubmit)}>
