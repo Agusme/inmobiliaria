@@ -14,7 +14,7 @@ const Compra = () => {
             <Row className="text-center">
               <Col lg={3} md={6} sm={12}>
                 {" "}
-                <Card className="bg-imageCasa bg-img p-5 mb-2">
+                <Card className="bg-imageCasa bg-img py-5 px-4 mb-2">
                   <Link to="/compra-casa" className="text-decoration-none">
                     {" "}
                     <p className="text-white fs-5 ">Casa</p>
@@ -23,7 +23,7 @@ const Compra = () => {
               </Col>
               <Col lg={3} md={6} sm={12}>
                 {" "}
-                <Card className="bg-imageCard3 bg-img p-5 mb-2">
+                <Card className="bg-imageCard3 bg-img py-5 px-4 mb-2">
                   <Link to="/compra-dpto" className="text-decoration-none">
                     <p className="text-white fs-5 ">Departamento</p>
                   </Link>
@@ -31,7 +31,7 @@ const Compra = () => {
               </Col>
               <Col lg={3} md={6} sm={12}>
                 {" "}
-                <Card className="bg-terreno bg-img p-5 mb-2">
+                <Card className="bg-terreno bg-img py-5 px-4 mb-2">
                   <Link to="/compra-terreno" className="text-decoration-none">
                     <p className="text-white fs-5 ">Terreno</p>
                   </Link>
@@ -39,7 +39,7 @@ const Compra = () => {
               </Col>
               <Col lg={3} md={6} sm={12}>
                 {" "}
-                <Card className="bg-imageCard2 bg-img p-5 mb-3">
+                <Card className="bg-imageCard2 bg-img py-5 px-4 mb-3">
                   <Link to="/compra-local" className="text-decoration-none">
                     <p className="text-white fs-5 ">Local</p>
                   </Link>{" "}
