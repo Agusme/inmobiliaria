@@ -10,7 +10,7 @@ const CompraCasa = ({ properties }) => {
     <div className="my-5 pt-5">
       <Container className="p-4 bg-white letra-azul">
         <h1 className="letra-azul mb-4 text-center display-4">Casas en Venta</h1>
-        {properties?.length !== 0 ? (
+        {Array.isArray(properties)&& properties?.length !== 0 ? (
           <Row>
             {properties.map(
               (property) =>
