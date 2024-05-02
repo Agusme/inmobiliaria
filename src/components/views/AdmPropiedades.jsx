@@ -35,7 +35,7 @@ const AdmPropiedades = ({ getProperties, properties }) => {
       <Container className="py-5 my-5">
         <div className="bg-white py-5">
           <h1 className="mt-3 text-center"> Administración de propiedades</h1>
-          {properties?.length !== 0 ? (
+          {Array.isArray(properties) && properties?.length !== 0 ? (
             <Table bordered hover responsive className="align-middle mt-3 mx-4">
               <thead>
                 <tr>
