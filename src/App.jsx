@@ -32,6 +32,7 @@ import DptoAlquilerId from "./components/views/departamento/DptoAlquilerId";
 import DptoAlquiler from "./components/views/departamento/DptoAlquiler";
 import Local from "./components/views/local/Local";
 import LocalId from "./components/views/local/LocalId";
+import TerrenosLules from "./components/views/terrenos/TerrenosLules";
 
 function App() {
   const [isAdmin, setIsAdmin] = useState(false);
@@ -121,6 +122,15 @@ function App() {
             path="/compra-terreno"
             element={
               <Terrenos
+                properties={properties}
+                getProperties={getProperties}
+              />
+            }
+          />
+           <Route
+            path="/compra-terreno-lules"
+            element={
+              <TerrenosLules
                 properties={properties}
                 getProperties={getProperties}
               />

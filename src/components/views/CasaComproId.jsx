@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "../../config/axiosInit";
-import {  Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { Carousel } from "react-responsive-carousel";
 import { TbBathFilled } from "react-icons/tb";
 import { IoBed, IoCallOutline } from "react-icons/io5";
@@ -82,35 +82,28 @@ const CompraCasaID = () => {
                   <p className="letra-azul">{property.description}</p>
                   <Col lg={6} md={6} sm={12}>
                     <Fade>
-                    <ul className="list-unstyled d-flex letra-azul fs-5">
-       <p className="pt-4 mx-3">Más info.</p>
-                <a
-                  href="https://api.whatsapp.com/send/?phone=543815633407&text=Hola%21+Quisiera+saber+m%C3%A1s+informaci%C3%B3n+de+&type=phone_number&app_absent=0"
-                  target="_blank"
-                  className="letra-azul"
-                >
-                  {" "}
-                  <li className="link-hover pt-4">
-                    {" "}
-                    <FaWhatsapp className="fs-2 me-3" />
-                  </li>
-                </a>
-                
-                <a
-                    href="tel:+543815633407"
-                    className="letra-azul"
-                  >
-                <li className="link-hover pt-4">
-                 
-                    <IoCallOutline className="fs-2 me-3"  />
-                </li>
-                </a>
-            
+                      <ul className="list-unstyled d-flex letra-azul fs-5">
+                        <p className="pt-4 mx-3">Más info.</p>
+                        <a
+                          href="https://api.whatsapp.com/send/?phone=543815633407&text=Hola%21+Quisiera+saber+m%C3%A1s+informaci%C3%B3n+de+&type=phone_number&app_absent=0"
+                          target="_blank"
+                          className="letra-azul"
+                        >
+                          {" "}
+                          <li className="link-hover pt-4">
+                            {" "}
+                            <FaWhatsapp className="fs-2 me-3" />
+                          </li>
+                        </a>
 
-              </ul>
+                        <a href="tel:+543815633407" className="letra-azul">
+                          <li className="link-hover pt-4">
+                            <IoCallOutline className="fs-2 me-3" />
+                          </li>
+                        </a>
+                      </ul>
                     </Fade>
-  
-              </Col>
+                  </Col>
                 </Col>
                 <Col lg={6} md={6} sm={12}>
                   <div className="px-3">
