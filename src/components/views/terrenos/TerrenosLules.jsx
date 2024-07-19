@@ -60,7 +60,7 @@ const TerrenosLules = () => {
                 <Row>
                   <Col lg={6} md={6} sm={12}>
                     <p className="letra-azul fs-4  poppins-light">
-                      Descripción de la propiedad de LULESS
+                      Descripción de la propiedad
                     </p>
                     <p className="letra-azul poppins-light fs-6">
                       {property.bathroom >= 1 && (
@@ -77,6 +77,8 @@ const TerrenosLules = () => {
                       )}
                     </p>
                     <p className="letra-azul">{property.description}</p>
+                    <p className="letra-azul">EMPRESA CONSTRUCTORA. MACROTECH SRL.</p>
+
                     <Col lg={6} md={6} sm={12}>
                       <Fade>
                       <ul className="list-unstyled d-flex letra-azul fs-5">
