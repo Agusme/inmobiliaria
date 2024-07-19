@@ -59,7 +59,7 @@ const TerrenosLules = () => {
                 </Carousel>
                 <Row>
                   <Col lg={6} md={6} sm={12}>
-                    <p className="letra-azul fs-4  poppins-light">
+                    <p className="letra-azul fs-4 ">
                       Descripción de la propiedad
                     </p>
                     <p className="letra-azul poppins-light fs-6">
@@ -76,39 +76,47 @@ const TerrenosLules = () => {
                         </>
                       )}
                     </p>
-                    <p className="letra-azul">{property.description}</p>
-                    <p className="letra-azul">
+                    <p className="letra-azul poppins-light">
+                      {property.description}
+                    </p>
+                    <p className="letra-azul poppins-light">
                       EMPRESA CONSTRUCTORA. MACROTECH SRL.
                     </p>
 
-                    <Col lg={6} md={6} sm={12}>
-                      <Fade>
-                        <ul className="list-unstyled d-flex letra-azul fs-5">
-                            <li className="list-style-none">
-                                JULIA - 
-                            </li>
-                          <p className="pt-4 mx-3">Más info.</p>
-                          <a
-                            href="https://api.whatsapp.com/send/?phone=543815633407&text=Hola%21+Quisiera+saber+m%C3%A1s+informaci%C3%B3n+de+&type=phone_number&app_absent=0"
-                            target="_blank"
-                            className="letra-azul"
-                          >
-                            {" "}
-                            <li className="link-hover pt-4">
-                              {" "}
-                              <FaWhatsapp className="fs-2 me-3" />
-                            </li>
-                          </a>
+                    <Fade>
+                      <p className="border-bottom  ">Más información</p>
 
-                          <a href="tel:+543815633407" className="letra-azul">
-                            <li className="link-hover pt-4">
-                              <IoCallOutline className="fs-2 me-3" />
-                            </li>
+                      <Row>
+                        <Col lg={6} md={6} sm={12}>
+                          <p className="poppins-light fs-6">Julia</p>
+                        </Col>
+                        <Col lg={6} md={6} sm={12} className="text-center">
+                          <a href="tel:+543815736895">
+                            {" "}
+                            <IoCallOutline className="fs-3 me-2 link-hover letra-azul" />
                           </a>
-                        </ul>
-                      </Fade>
-                    </Col>
+                          <a href="https://wa.link/w8pshc">
+                            <FaWhatsapp className="fs-3 link-hover letra-azul" />
+                          </a>
+                        </Col>
+                      </Row>
+
+                      <Row>
+                        <Col lg={6} md={6} sm={12}>
+                          <p className="poppins-light fs-6">Isaiás</p>
+                        </Col>
+                        <Col l lg={6} md={6} sm={12} className="text-center">
+                          {" "}
+                          <a href="tel:+543815139173">
+                            <IoCallOutline className="fs-3 me-2 link-hover letra-azul" />
+                          </a>
+                          <FaWhatsapp className="fs-3 link-hover" />
+
+                        </Col>
+                      </Row>
+                    </Fade>
                   </Col>
+
                   <Col lg={6} md={6} sm={12}>
                     <div className="px-3">
                       <iframe
