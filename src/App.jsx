@@ -128,7 +128,7 @@ function App() {
             }
           />
            <Route
-            path="/compra-terreno-lules"
+            path="/compra-terreno-lules/:id"
             element={
               <TerrenosLules
                 properties={properties}
