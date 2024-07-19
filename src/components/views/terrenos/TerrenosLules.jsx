@@ -87,10 +87,10 @@ const TerrenosLules = () => {
                       <p className="border-bottom  ">Más información</p>
 
                       <Row>
-                        <Col lg={6} md={6} sm={12}>
+                        <Col lg={6} md={6} sm={6}  xs={6}>
                           <p className="poppins-light fs-6">Julia</p>
                         </Col>
-                        <Col lg={6} md={6} sm={12} className="text-center">
+                        <Col lg={6} md={6} sm={6}  xs={6}className="text-center">
                           <a href="tel:+543815736895">
                             {" "}
                             <IoCallOutline className="fs-3 me-2 link-hover letra-azul" />
@@ -102,10 +102,10 @@ const TerrenosLules = () => {
                       </Row>
 
                       <Row>
-                        <Col lg={6} md={6} sm={12}>
+                        <Col lg={6} md={6} sm={12}  xs={6}>
                           <p className="poppins-light fs-6">Isaiás</p>
                         </Col>
-                        <Col l lg={6} md={6} sm={12} className="text-center">
+                        <Col l lg={6} md={6} sm={12}  xs={6} className="text-center">
                           {" "}
                           <a href="tel:+543815139173">
                             <IoCallOutline className="fs-3 me-2 link-hover letra-azul" />
