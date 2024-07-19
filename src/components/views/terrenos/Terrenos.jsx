@@ -49,7 +49,7 @@ const Terrenos = ({ properties }) => {
                         <Link
                           to={
                             property.location === "Lules"
-                              ? `/compra-terreno-lules/${property._id}`
+                              ? `/compra-terreno-lules`
                               : `/compra-terreno-id/${property._id}`
                           }
                         >
