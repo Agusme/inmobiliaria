@@ -46,23 +46,18 @@ const Terrenos = ({ properties }) => {
                             </>
                           )}
                         </p>
-{
-  property.location === "Lules" ?  <Link to={`/compra-terreno-id/${property._id}`}>
-  <Button className="btn btn-mas custom-btn">
-    Ver más
-  </Button>
-</Link>:  <Link to={`/compra-terreno-id/${property._id}`}>
+                        <Link
+                          to={
+                            property.location === "Lules"
+                              ? `/compra-terreno-lules/${property._id}`
+                              : `/compra-terreno-id/${property._id}`
+                          }
+                        >
                           <Button className="btn btn-mas custom-btn">
                             Ver más
                           </Button>
                         </Link>
-}
-
-                        <Link to={`/compra-terreno-id/${property._id}`}>
-                          <Button className="btn btn-mas custom-btn">
-                            Ver más
-                          </Button>
-                        </Link>
+                       
                       </CardBody>
                     </Card>
                   </Col>
