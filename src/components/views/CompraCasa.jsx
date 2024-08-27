@@ -7,9 +7,9 @@ import { Link } from "react-router-dom";
 
 const CompraCasa = ({ properties }) => {
   return (
-    <div className="my-5 pt-5">
-      <Container className="p-4 bg-white letra-azul">
-        <h1 className="letra-azul mb-4 text-center display-4">Casas en Venta</h1>
+    <div className="pt-5 bg-white ">
+      <Container className="py-3 letra-azul rounded">
+        <h1 className="letra-azul mb-3 pt-5 text-center display-4">Casas en Venta</h1>
         {Array.isArray(properties)&& properties?.length !== 0 ? (
           <Row>
             {properties.map(
@@ -18,7 +18,7 @@ const CompraCasa = ({ properties }) => {
                 property.typeProperty === "Casa" && (
                   <Col key={property._id} lg={3} md={3} sm={6}>
                      <Link to={`/compra-casa-id/${property._id}`} className="text-decoration-none">
-                    <Card className="text-center my-2 card-houses border-0 rounded">
+                    <Card className="text-center card-houses border-0 rounded">
                       <img
                         className="property-image text-center rounded-top"
                         src={
@@ -33,7 +33,9 @@ const CompraCasa = ({ properties }) => {
                           <ImLocation className="" />
                           {property.location}{" "}
                         </p>
-                        <hr />
+                      
+           
+
                         <p className="text-center poppins-light">
                           {property.bathroom >= 1 && (
                             <>
