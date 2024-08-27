@@ -63,12 +63,12 @@ function App() {
             element={
               <>
                 {" "}
-                <Home /> <Nosotros /> <Contacto />
+                <Home /> <Nosotros id={'inicio'}/> <Contacto />
               </>
             }
           />
           <Route path="/contacto" element={<Contacto />} />
-          <Route path="/nosotros" element={<Nosotros />} />
+          <Route path="/nosotros"  element={<Nosotros />} />
           <Route path="/asesoramiento" element={<Asesoramiento />} />
           <Route
             path="/alquiler"

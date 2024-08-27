@@ -17,9 +17,10 @@ const CompraCasa = ({ properties }) => {
                 property.typeTransaction === "Venta" &&
                 property.typeProperty === "Casa" && (
                   <Col key={property._id} lg={3} md={3} sm={6}>
-                    <Card className="text-center my-2 card-houses">
+                     <Link to={`/compra-casa-id/${property._id}`} className="text-decoration-none">
+                    <Card className="text-center my-2 card-houses border-0 rounded">
                       <img
-                        className="property-image text-center"
+                        className="property-image text-center rounded-top"
                         src={
                           Array.isArray(property.images)
                             ? property.images[0]
@@ -47,13 +48,14 @@ const CompraCasa = ({ properties }) => {
                             </>
                           )}
                         </p>
-                        <Link to={`/compra-casa-id/${property._id}`}>
-                          <Button className="btn btn-mas custom-btn">
-                            Ver más
-                          </Button>
-                        </Link>
+                       <Button className="custom-btn">
+                        Ver más
+                       </Button>
+                          
                       </CardBody>
                     </Card>
+                    </Link>
+
                   </Col>
                 )
             )}

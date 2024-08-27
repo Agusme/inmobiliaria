@@ -1,14 +1,14 @@
+/* eslint-disable react/prop-types */
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { Fade } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
-const Portada = () => {
+const Portada = ({id}) => {
   return (
     <Fade>
       <div id="nosotros">
         <Container fluid className="bg-white text-center pb-5">
           <Container className="py-5">
-           
-            <h4 className="display-4 letra-azul py-5">Nuestros Servicios</h4>
+            <h4 className="display-4 letra-azul py-5"> {id === "inicio" ? "¿Qué estás buscando?": "Nuestros Servicios"}</h4>
             <Row>
               <Col lg={3} md={6} sm={6}>
                 <Link
@@ -58,7 +58,6 @@ const Portada = () => {
               de propiedades. Brindamos un servicio profesional y personalizado
               para hacer realidad tus objetivos inmobiliarios.
             </p>
-
             <Row>
               <Col lg={4} md={4} sm={12}>
                 <p className="fs-4 letra-azul">Expertos en Bienes de Raices</p>
@@ -85,7 +84,6 @@ const Portada = () => {
               </Col>
             </Row>
           </Container>
-         
         </Container>
       </div>
     </Fade>
