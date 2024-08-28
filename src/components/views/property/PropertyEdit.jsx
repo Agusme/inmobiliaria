@@ -10,7 +10,6 @@ import Swal from "sweetalert2";
 
 const PropertyEdit = ({ getProperties }) => {
   const { register, handleSubmit, reset, setValue } = useForm();
-
   const URL = import.meta.env.VITE_API_BMZ;
   const { id } = useParams();
   const navigate = useNavigate();
@@ -25,7 +24,11 @@ const PropertyEdit = ({ getProperties }) => {
       const propertyApi = res.data;
 
       Object.entries(propertyApi).forEach(([key, value]) => {
-        setValue(key, value);
+        if (Array.isArray(value)) {
+          setValue(key, value.join(',')); // Convert array to comma-separated string for form input
+        } else {
+          setValue(key, value);
+        }
       });
     } catch (error) {
       console.log(error);
@@ -34,13 +37,24 @@ const PropertyEdit = ({ getProperties }) => {
 
   const onSubmit = async (data) => {
     try {
-      let imagesArray = [];
-      if (typeof data.images === 'string') {
-        imagesArray = data.images.split(',');
-      } else if (Array.isArray(data.images)) {
-        imagesArray = data.images;
-      }
-      const res = await axios.put(`${URL}/${id}`, { ...data, images: imagesArray });
+      const formData = new FormData();
+
+      // Append other form fields
+      Object.keys(data).forEach((key) => {
+        if (key === 'images') {
+          Array.from(data.images).forEach((file) => {
+            formData.append('images', file);
+          });
+        } else {
+          formData.append(key, data[key]);
+        }
+      });
+
+      const res = await axios.put(`${URL}/${id}`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
 
       if (res.status === STATUS.STATUS_OK) {
         Swal.fire(
@@ -51,8 +65,6 @@ const PropertyEdit = ({ getProperties }) => {
         reset();
         getProperties();
         navigate("/admin-propiedades");
-        getProperties();
-
       }
     } catch (error) {
       console.log(error);
@@ -65,143 +77,167 @@ const PropertyEdit = ({ getProperties }) => {
         <h1>Editar Propiedad</h1>
         <hr />
         <Form onSubmit={handleSubmit(onSubmit)}>
-              <Row>
-                <Form.Group
-                  className="mb-3  d-flex flex-md-row flex-column"
-                  controlId="formTypeProperty"
-                >
-                  <Col lg={4} md={4} sm={12}>
-                    <Form.Label>
-                      <span className="fw-semibold">Type Property </span> (casa-
-                      departamento- terreno -local){" "}
-                    </Form.Label>
-                  </Col>
-                  <Col lg={8} md={8} sm={12}>
-                    <Form.Control
-                      type="text"
-                      {...register("typeProperty")}
-                      placeholder="Ingrese el tipo de propiedad"
-                      maxLength={30}
-                      required
-                    />
-                  </Col>
-                </Form.Group>
-                <Form.Group
-                  className="mb-3 d-flex flex-md-row flex-column"
-                  controlId="formTypeTransaction"
-                >
-                  <Col lg={4} md={4} sm={12}>
-                    <Form.Label>
-                      <span className="fw-semibold">Type Transaction </span>{" "}
-                      (venta - alquiler)
-                    </Form.Label>
-                  </Col>
-                  <Col lg={8} md={8} sm={12}>
-                    <Form.Control
-                      {...register("typeTransaction")}
-                      placeholder="Ingrese el tipo de transaccion"
-                      maxLength={30}
-                      required
-                    />
-                  </Col>
-                </Form.Group>
-                <Form.Group className="mb-3 d-flex flex-md-row flex-column " controlId="formBedroom">
-                  <Col lg={4} md={4} sm={12}>
-                    <Form.Label>
-                      <span className="fw-semibold">Habitaciones </span>
-                    </Form.Label>
-                  </Col>
-                  <Col lg={8} md={8} sm={12}>
-                    <Form.Control
-                    type="number"
-                      {...register("bedroom")}
-                      placeholder="Ingrese la cantidad de habitaciones"
-                      maxLength={30}
-                      required
-                    />
-                  </Col>
-                </Form.Group>
-                <Form.Group className="mb-3 d-flex flex-md-row flex-column " controlId="formBathroom">
-                  <Col lg={4} md={4} sm={12}>
-                    <Form.Label>
-                      <span className="fw-semibold">Baños </span>
-                    </Form.Label>
-                  </Col>
-                  <Col lg={8} md={8} sm={12}>
-                    <Form.Control
-                    type="number"
-                      {...register("bathroom")}
-                      placeholder="Ingrese la cantidad de baños"
-                      maxLength={30}
-                      required
-                    />
-                  </Col>
-                </Form.Group>
-                <Form.Group className="mb-3 d-flex flex-md-row flex-column " controlId="formLocation">
-                  <Col lg={4} md={4} sm={12}>
-                    <Form.Label>
-                      <span className="fw-semibold">Location </span>
-                    </Form.Label>
-                  </Col>
-                  <Col lg={8} md={8} sm={12}>
-                    <Form.Control
-                      {...register("location")}
-                      placeholder="Ingrese la ubicacion de la propiedad"
-                      maxLength={30}
-                      required
-                    />
-                  </Col>
-                </Form.Group>
-                <Form.Group className="mb-3 d-flex flex-md-row flex-column " controlId="formDescription">
-                  <Col lg={4} md={4} sm={12}>
-                    <Form.Label>
-                      <span className="fw-semibold">Description </span>
-                    </Form.Label>
-                  </Col>
-                  <Col lg={8} md={8} sm={12}>
-                    <Form.Control
-                    {...register("description")}
-                    placeholder="Describa  la propiedad"
-                    maxLength={600}
-                    required 
-                    />
-                  </Col>
-                </Form.Group>
-                <Form.Group className="mb-3 d-flex flex-md-row flex-column " controlId="formMap">
-                  <Col lg={4} md={4} sm={12}>
-                    <Form.Label>
-                      <span className="fw-semibold">Map </span>
-                    </Form.Label>
-                  </Col>
-                  <Col lg={8} md={8} sm={12}>
-                    <Form.Control
-                    {...register("map")}
-                    placeholder="Ingrese el mapa"
-                    required 
-                    
-                    />
-                  </Col>
-                </Form.Group>
-                <Form.Group className="mb-3 d-flex flex-md-row flex-column " controlId="formImages">
-                  <Col lg={4} md={4} sm={12}>
-                    <Form.Label>
-                      <span className="fw-semibold">Images </span>
-                    </Form.Label>
-                  </Col>
-                  <Col lg={8} md={8} sm={12}>
-                    <Form.Control
-                    
-                    {...register("images")}
-                    required 
-                    />
-                  </Col>
-                </Form.Group>
-              </Row>
-              <div className="d-grid gap-2 d-md-flex justify-content-md-end">
-                <Button  type="submit" className="me-md-2 my-3">GUARDAR</Button>
-              </div>
-            </Form>
+          <Row>
+            <Form.Group
+              className="mb-3 d-flex flex-md-row flex-column"
+              controlId="formTypeProperty"
+            >
+              <Col lg={4} md={4} sm={12}>
+                <Form.Label>
+                  <span className="fw-semibold">Tipo de propiedad</span> (Casa - Departamento - Terreno - Local)
+                </Form.Label>
+              </Col>
+              <Col lg={8} md={8} sm={12}>
+                <Form.Control
+                  type="text"
+                  {...register("typeProperty")}
+                  placeholder="Ingrese el tipo de propiedad"
+                  maxLength={30}
+                  required
+                />
+              </Col>
+            </Form.Group>
 
+            <Form.Group
+              className="mb-3 d-flex flex-md-row flex-column"
+              controlId="formTypeTransaction"
+            >
+              <Col lg={4} md={4} sm={12}>
+                <Form.Label>
+                  <span className="fw-semibold">Tipo de transacción</span> (Venta - Alquiler)
+                </Form.Label>
+              </Col>
+              <Col lg={8} md={8} sm={12}>
+                <Form.Control
+                  type="text"
+                  {...register("typeTransaction")}
+                  placeholder="Ingrese el tipo de transacción"
+                  maxLength={30}
+                  required
+                />
+              </Col>
+            </Form.Group>
+
+            <Form.Group
+              className="mb-3 d-flex flex-md-row flex-column"
+              controlId="formBathroom"
+            >
+              <Col lg={4} md={4} sm={12}>
+                <Form.Label>
+                  <span className="fw-semibold">Baños</span>
+                </Form.Label>
+              </Col>
+              <Col lg={8} md={8} sm={12}>
+                <Form.Control
+                  type="number"
+                  {...register("bathroom")}
+                  placeholder="Ingrese la cantidad de baños"
+                  required
+                />
+              </Col>
+            </Form.Group>
+
+            <Form.Group
+              className="mb-3 d-flex flex-md-row flex-column"
+              controlId="formBedroom"
+            >
+              <Col lg={4} md={4} sm={12}>
+                <Form.Label>
+                  <span className="fw-semibold">Habitaciones</span>
+                </Form.Label>
+              </Col>
+              <Col lg={8} md={8} sm={12}>
+                <Form.Control
+                  type="number"
+                  {...register("bedroom")}
+                  placeholder="Ingrese la cantidad de habitaciones"
+                  required
+                />
+              </Col>
+            </Form.Group>
+
+            <Form.Group
+              className="mb-3 d-flex flex-md-row flex-column"
+              controlId="formLocation"
+            >
+              <Col lg={4} md={4} sm={12}>
+                <Form.Label>
+                  <span className="fw-semibold">Ubicación</span>
+                </Form.Label>
+              </Col>
+              <Col lg={8} md={8} sm={12}>
+                <Form.Control
+                  type="text"
+                  {...register("location")}
+                  placeholder="Ingrese la ubicación de la propiedad"
+                  required
+                />
+              </Col>
+            </Form.Group>
+
+            <Form.Group
+              className="mb-3 d-flex flex-md-row flex-column"
+              controlId="formDescription"
+            >
+              <Col lg={4} md={4} sm={12}>
+                <Form.Label>
+                  <span className="fw-semibold">Descripción</span>
+                </Form.Label>
+              </Col>
+              <Col lg={8} md={8} sm={12}>
+                <Form.Control
+                  type="text"
+                  {...register("description")}
+                  placeholder="Describa la propiedad"
+                  maxLength={600}
+                  required
+                />
+              </Col>
+            </Form.Group>
+
+            <Form.Group
+              className="mb-3 d-flex flex-md-row flex-column"
+              controlId="formMap"
+            >
+              <Col lg={4} md={4} sm={12}>
+                <Form.Label>
+                  <span className="fw-semibold">Mapa</span>
+                </Form.Label>
+              </Col>
+              <Col lg={8} md={8} sm={12}>
+                <Form.Control
+                  type="text"
+                  {...register("map")}
+                  placeholder="Ingrese el enlace del mapa"
+                  required
+                />
+              </Col>
+            </Form.Group>
+
+            <Form.Group
+              className="mb-3 d-flex flex-md-row flex-column"
+              controlId="formImages"
+            >
+              <Col lg={4} md={4} sm={12}>
+                <Form.Label>
+                  <span className="fw-semibold">Imágenes</span>
+                </Form.Label>
+              </Col>
+              <Col lg={8} md={8} sm={12}>
+                <Form.Control
+                  type="file"
+                  {...register("images")}
+                  multiple
+                  accept="image/*"
+                  placeholder="Sube una o varias imágenes"
+                />
+              </Col>
+            </Form.Group>
+          </Row>
+          <Button variant="primary" type="submit">
+            Guardar Cambios
+          </Button>
+        </Form>
       </Container>
     </div>
   );
