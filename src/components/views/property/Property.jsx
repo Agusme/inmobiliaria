@@ -53,7 +53,22 @@ const Property = ({properties, getProperties}) => {
       <td>{properties?.location}</td>
       <td>{properties?.description}</td>
       <td>{properties?.map}</td>
-      <td>{properties?.images}</td>
+      <td>
+        {properties?.images?.length > 0 ? (
+          <div className="image-gallery">
+            {properties.images.map((image, index) => (
+              <img
+                key={index}
+                src={image}
+                alt={`Property Image ${index + 1}`}
+                style={{ width: '100px', height: 'auto', marginRight: '5px' }} 
+              />
+            ))}
+          </div>
+        ) : (
+          'No images'
+        )}
+      </td>
 
       <td className="w-25">
         <div className="d-flex justify-content-center">
