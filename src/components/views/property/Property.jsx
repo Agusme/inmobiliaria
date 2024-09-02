@@ -42,6 +42,9 @@ const Property = ({properties, getProperties}) => {
       }
     });
   };
+  const sortedImages = properties?.images
+    ? [...properties.images].sort((a, b) => a.localeCompare(b))
+    : [];
 
   return (
     <tr>
@@ -54,19 +57,19 @@ const Property = ({properties, getProperties}) => {
       <td>{properties?.description}</td>
       <td>{properties?.map}</td>
       <td>
-        {properties?.images?.length > 0 ? (
+        {sortedImages.length > 0 ? (
           <div className="image-gallery">
-            {properties.images.map((image, index) => (
+            {sortedImages.map((image, index) => (
               <img
                 key={index}
-                src={image}
+                src={image} // Asegúrate de que image sea un string con la URL de la imagen
                 alt={`Property Image ${index + 1}`}
-                style={{ width: '100px', height: 'auto', marginRight: '5px' }} 
+                style={{ width: "100px", height: "auto", marginRight: "5px" }}
               />
             ))}
           </div>
         ) : (
-          'No images'
+          "No images"
         )}
       </td>
 
