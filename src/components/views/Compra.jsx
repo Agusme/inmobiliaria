@@ -4,12 +4,13 @@ import { Link } from "react-router-dom";
 const Compra = () => {
   return (
     <Fade>
-      <div >
-        <h1 className="text-white  pt-5 my-5 text-center display-4">
+      <div  className="bg-white pb-5">
+ 
+
+        <Container fluid className="py-5 mb-5">
+        <h1 className="letra-azul  py-5 text-center display-4">
           ¿Qué Buscás?
         </h1>
-
-        <Container fluid className="bg-white py-5 mb-5">
           <Container>
             <Row className="text-center">
               <Col lg={3} md={6} sm={12}>

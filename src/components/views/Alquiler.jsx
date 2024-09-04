@@ -5,10 +5,11 @@ import { Link } from "react-router-dom";
 const Alquiler = () => {
     return (
         <Fade>
-        <div>
-          <h4 className="text-white pt-5 my-5 text-center display-4">¿Qué Buscás?</h4>
+        <div className="bg-white py-5">
   
           <Container fluid className="bg-white py-5 mb-5">
+          <h4 className="letra-azul py-5 text-center display-4">¿Qué Buscás?</h4>
+
             <Container>
               <Row className="text-center">
                 <Col lg={6} md={6} sm={12}>

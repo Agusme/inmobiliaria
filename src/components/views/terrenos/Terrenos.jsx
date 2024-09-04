@@ -9,7 +9,7 @@ const Terrenos = ({ properties }) => {
   return (
     <div className="pt-5 bg-white pb-5">
       <Container className="py-3 letra-azul">
-        <h1 className="letra-azul mb-3 pt-5 text-center display-4">Terrenos</h1>
+        <h1 className="letra-azul mb-3 pt-5 text-center  display-4">Terrenos</h1>
         {properties?.length !== 0 ? (
           <Row>
             {properties.map(
