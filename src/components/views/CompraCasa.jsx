@@ -18,7 +18,7 @@ const CompraCasa = ({ properties }) => {
                 property.typeProperty === "Casa" && (
                   <Col key={property._id} lg={3} md={3} sm={6}>
                      <Link to={`/compra-casa-id/${property._id}`} className="text-decoration-none">
-                    <Card className="text-center card-houses border-0 rounded">
+                    <Card className="h-100 d-flex flex-column text-center card-houses border-0 rounded">
                       <img
                         className="property-image text-center rounded-top"
                         src={
@@ -28,29 +28,28 @@ const CompraCasa = ({ properties }) => {
                         }
                         alt={property.location}
                       />
-                      <CardBody>
-                        <p className="card-text text-center letra-azul">
-                          <ImLocation className="" />
+                      <CardBody className="d-flex flex-column flex-grow-1">
+                        <p className="card-text text-center letra-azul ">
+                          <ImLocation className="me-1" />
                           {property.location}{" "}
                         </p>
-                      
-           
-
-                        <p className="text-center poppins-light">
-                          {property.bathroom >= 1 && (
-                            <>
+                      <div className="d-flex justify-content-center align-items-center mb-4 flex-grow-1 ">
+                      {property.bathroom >= 1 && (
+                            <p className="poppins-light">
                               <TbBathFilled className=" mx-3" />
                               {property.bathroom}
-                            </>
+                            </p>
                           )}
-                          {property.bedroom >= 1 && (
-                            <>
+                           {property.bedroom >= 1 && (
+                            <p  className="poppins-light">
                               <IoBed className=" mx-3" />
                               {property.bedroom}
-                            </>
+                            </p>
                           )}
-                        </p>
-                       <Button className="custom-btn">
+                      </div>
+           
+
+                       <Button className="custom-btn mt-auto">
                         Ver más
                        </Button>
                           

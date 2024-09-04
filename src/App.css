@@ -195,7 +195,9 @@ border-bottom: #1d32514d 1px solid;
     background-color: #1D3251 ;
     border-color:#1D3251; 
   }
-
+.card-text{
+  min-height: 40px;
+}
   .custom-btn.btn:hover {
     background-color: #7184a0 ;
     border-color:#7184a0; 
