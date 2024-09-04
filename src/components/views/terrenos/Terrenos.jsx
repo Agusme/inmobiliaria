@@ -16,7 +16,7 @@ const Terrenos = ({ properties }) => {
               (property) =>
                 property.typeTransaction === "Venta" &&
                 property.typeProperty === "Terreno" && (
-                  <Col key={property._id} lg={3} md={3} sm={6}>
+                  <Col key={property._id} lg={3} md={3} sm={6} className="my-3">
                    <Link
                           to={
                             property.location === "San Isidro de Lules"

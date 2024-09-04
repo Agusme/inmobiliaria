@@ -18,7 +18,7 @@ const DptoAlquiler = ({ properties }) => {
               (property) =>
                 property.typeTransaction === "Alquiler" &&
                 property.typeProperty === "Departamento" && (
-                  <Col key={property._id} lg={3} md={3} sm={6}>
+                  <Col key={property._id} lg={3} md={3} sm={6} className="my-3">
                                            <Link to={`/alquiler-dpto-id/${property._id}`} className='text-decoration-none'>
 
                     <Card className="h-100 d-flex flex-column text-center card-houses border-0 rounded my-5">
