@@ -21,7 +21,7 @@ const DptoAlquiler = ({ properties }) => {
                   <Col key={property._id} lg={3} md={3} sm={6}>
                                            <Link to={`/alquiler-dpto-id/${property._id}`} className='text-decoration-none'>
 
-                    <Card className="h-100 d-flex flex-column text-center card-houses border-0 rounded my-3">
+                    <Card className="h-100 d-flex flex-column text-center card-houses border-0 rounded my-5">
 
                       <img
                         className="property-image text-center rounded-top"
