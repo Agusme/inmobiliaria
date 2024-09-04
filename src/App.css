@@ -126,21 +126,6 @@ background-color: #1D3251;
 .letra-azul{
   color: #1D3251;
 }
-/* .logo-whatsapp{
-  
-  width: 60px;
-  height: auto;
-  position: sticky;
-  object-fit: contain;
-  top: 80%;
-  left: 89%;
-  transition: transform 0.3s ease-in-out;
-
-} */
-/* 
-.logo-whatsapp:hover {
-  transform: scale(1.1);
-} */
 
 .centered-container {
   display: flex;
@@ -196,7 +181,7 @@ border-bottom: #1d32514d 1px solid;
     border-color:#1D3251; 
   }
 .card-text{
-  min-height: 40px;
+  min-height: 70px;
 }
   .custom-btn.btn:hover {
     background-color: #7184a0 ;

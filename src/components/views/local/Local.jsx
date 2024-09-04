@@ -9,53 +9,54 @@ import { Link } from 'react-router-dom';
 
 const Local = ({properties}) => {
     return (
-        <div className="my-5 pt-5">
-        <Container className="p-4 bg-white letra-azul">
-          <h1 className="letra-azul mb-4 text-center display-4">Locales</h1>
+        <div className="pt-5 bg-white pb-5">
+        <Container className="py-3 letra-azul ">
+          <h1 className="letra-azul mb-3 pt-5 text-center display-4">Locales</h1>
           {properties?.length !== 0 ? (<Row>
             {properties.map(
               (property) =>
                 property.typeTransaction === "Venta" &&
                 property.typeProperty === "Local" && (
                   <Col key={property._id} lg={3} md={3} sm={6}>
-                    <Card className="text-center my-2 card-houses"                      
+                                       <Link to={`/compra-local-id/${property._id}`} className='text-decoration-none'>
+
+                    <Card  className="h-100 d-flex flex-column text-center card-houses border-0 rounded"                      
   >
                       <img
-                        className="property-image text-center "
+                        className="property-image text-center rounded-top "
                         src={
                           Array.isArray(property.images)
                             ? property.images[0]
                             : property.images
                         }
                       />
-                      <CardBody>
+                      <CardBody className="d-flex flex-column flex-grow-1">
                         <p className="card-text text-center letra-azul">
-                          <ImLocation className="letra-azul" />
+                          <ImLocation className="me-1" />
                           {property.location}{" "}
                         </p>
-                        <hr />
-                        <p className="text-center poppins-light">
-                          {property.bathroom >= 1 && (
-                            <>
-                              <TbBathFilled className="letra-azul mx-3" />
+                        <div className="d-flex justify-content-center align-items-center mb-4 flex-grow-1 ">
+                      {property.bathroom >= 1 && (
+                            <p className="poppins-light">
+                              <TbBathFilled className=" mx-3" />
                               {property.bathroom}
-                            </>
+                            </p>
                           )}
-                          {property.bedroom >= 1 && (
-                            <>
-                              <IoBed className="letra-azul mx-3" />
+                           {property.bedroom >= 1 && (
+                            <p  className="poppins-light">
+                              <IoBed className=" mx-3" />
                               {property.bedroom}
-                            </>
+                            </p>
                           )}
-                        </p>
+                      </div>
   
-                        <Link to={`/compra-local-id/${property._id}`}>
                           <Button className="btn btn-mas custom-btn">
                             Ver más
                           </Button>
-                        </Link>
                       </CardBody>
                     </Card>
+                    </Link>
+
                   </Col>
                 )
             )}
