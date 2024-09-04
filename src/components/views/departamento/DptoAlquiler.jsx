@@ -35,11 +35,11 @@ const DptoAlquiler = ({ properties }) => {
                         <p className="card-text text-center letra-azul">
                           <ImLocation className="letra-azul" />
                           {property.location}{" "}
-                         
-                        </p>
-                        <Badge bg="warning my-3" >
+                          <Badge bg="warning my-3" >
         TEMPORARIO
       </Badge>
+                        </p>
+              
       <div className="d-flex justify-content-center align-items-center mb-4 flex-grow-1 ">
                       {property.bathroom >= 1 && (
                             <p className="poppins-light">
