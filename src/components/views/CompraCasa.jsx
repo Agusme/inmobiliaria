@@ -18,7 +18,7 @@ const CompraCasa = ({ properties }) => {
                 property.typeProperty === "Casa" && (
                   <Col key={property._id} lg={3} md={3} sm={6}>
                      <Link to={`/compra-casa-id/${property._id}`} className="text-decoration-none">
-                    <Card className="h-100 d-flex flex-column text-center card-houses border-0 rounded">
+                    <Card className="h-100 d-flex flex-column text-center card-houses border-0 rounded my-3">
                       <img
                         className="property-image text-center rounded-top"
                         src={
