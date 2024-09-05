@@ -71,17 +71,17 @@ const Portada = ({id}) => {
               <Col lg={8} md={8} sm={12}>
                 <Row className="text-center mt-4">
                   <Col lg={4} md={5} sm={4}>
-                    <CountUp end={30} duration={2} className="fw-semibold fs-2 text-warning" />
+                    <CountUp end={30} duration={10} className="fw-semibold fs-2 text-warning" />
   
                     <p>Años de experiencia</p>
                   </Col>
                   <Col lg={4} md={5} sm={4}>
-                    <CountUp end={1500} duration={2} className="fw-semibold fs-2 text-warning" />
+                    <CountUp end={1500} duration={10} className="fw-semibold fs-2 text-warning" />
 
                     <p>Propiedades vendidas</p>
                   </Col>
                   <Col lg={4} md={5} sm={4}>
-                  <CountUp end={3000} duration={2} className="fw-semibold fs-2 text-warning" />
+                  <CountUp end={3000} duration={10} className="fw-semibold fs-2 text-warning" />
                   <p>Clientes felices</p>
                   </Col>
                 </Row>
