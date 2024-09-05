@@ -47,9 +47,9 @@ const AdmPropiedades = ({ getProperties, properties }) => {
   };
 
   return (
-    <div>
-      <Container className="py-5 my-5">
-        <div className="bg-white py-5">
+    <div className="text-white imgHome">
+      <Container className="py-5" fluid>
+        <div className="py-5">
           <h1 className="mt-3 text-center">Administración de propiedades</h1>
           {Array.isArray(properties) && properties?.length !== 0 ? (
             <Table bordered hover responsive className="align-middle mt-3 mx-4">
@@ -83,7 +83,7 @@ const AdmPropiedades = ({ getProperties, properties }) => {
             </div>
           )}
         </div>
-        <div className="bg-white mb-5 pt-5">
+        <div className="efect-glass mb-5 pt-5">
           <h3 className="my-3 text-center">Añadir Propiedad 🏘️</h3>
           <div className="px-3">
             <Form onSubmit={handleSubmit(onSubmit)}>
@@ -106,7 +106,7 @@ const AdmPropiedades = ({ getProperties, properties }) => {
                       maxLength={30}
                       required
                     />
-                    <Form.Text className="text-muted">
+                    <Form.Text className= "text-secondary">
                       Usa mayúscula para empezar{" "}
                     </Form.Text>
                   </Col>
@@ -130,8 +130,7 @@ const AdmPropiedades = ({ getProperties, properties }) => {
                       maxLength={30}
                       required
                     />
-                    <Form.Text className="text-muted">
-                      Usa mayúscula para empezar{" "}
+ <Form.Text className= "text-secondary">                      Usa mayúscula para empezar{" "}
                     </Form.Text>
                   </Col>
                 </Form.Group>
@@ -249,8 +248,7 @@ const AdmPropiedades = ({ getProperties, properties }) => {
                       multiple
                       required
                     />
-                    <Form.Text className="text-muted">
-                      Puedes subir una o varias imágenes.
+ <Form.Text className= "text-secondary">                      Puedes subir una o varias imágenes.
                     </Form.Text>
                   </Col>
                 </Form.Group>

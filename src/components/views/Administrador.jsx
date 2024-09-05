@@ -30,9 +30,9 @@ const Administrador = () => {
     }
 
   return (
-    <div className="mt-5 pt-5 text-white text-center vh-100">
+    <div className="py-5 text-white imgHome text-center">
       <Container>
-        <h1 className="text-white py-4">Bienvenido a la página de administración</h1>
+        <h1 className="mt-5 py-5">Bienvenido a la página de administración</h1>
         <p>Versión del Sistema: 1.0.0</p>
         <hr />
         <Row className="justify-content-center my-4">
