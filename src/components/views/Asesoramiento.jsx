@@ -50,7 +50,7 @@ const Asesoramiento = () => {
     
   return (
     <Fade>
-      <Container className="text-white vh-100">
+      <Container className="text-white vh-100 imgHome">
         <h1 className="pt-5 pb-3 mt-5 text-center">Asesoramiento</h1>
 
         <p className="fs-6 text-center my-3" >
