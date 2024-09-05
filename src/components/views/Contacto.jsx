@@ -24,8 +24,8 @@ const Contacto = () => {
   const [showModal, setShowModal] = React.useState(false);
 
   const emailjsConfig = {
-    serviceId: "service_qn846gq",
-    templateId: "template_lsp5hg6",
+    serviceId: "service_n3v74fh",
+    templateId: "template_g7q28lw",
     publicKey: "BDtEaJzGHui804FZE",
   };
 

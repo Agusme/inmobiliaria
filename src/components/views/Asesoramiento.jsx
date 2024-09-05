@@ -16,33 +16,34 @@ const Asesoramiento = () => {
       const [showModal, setShowModal] = React.useState(false);
     
       const emailjsConfig = {
-        serviceId: "service_qn846gq",
-        templateId: "template_lsp5hg6",
+        serviceId: "service_n3v74fh",
+        templateId: "template_g7q28lw",
         publicKey: "BDtEaJzGHui804FZE",
       };
-    
       const onSubmit = async (data) => {
         try {
           const emailData = {
-            ...data,
-            user_name: data.user_name,
-            phone: data.phone,
-            message: data.message,
+            from_name: data.user_name,      // Nombre del remitente (cliente)
+            reply_to: data.email,           // Correo electrónico del remitente
+            phone: data.phone,              // Teléfono del cliente
+            message: data.message,          // Mensaje del cliente
           };
+    
           const response = await emailjs.send(
             emailjsConfig.serviceId,
             emailjsConfig.templateId,
             emailData,
             emailjsConfig.publicKey
           );
-          console.log("correo enviado con exito: ", response);
     
+          console.log("Correo enviado con éxito:", response);
           setShowModal(true);
           reset();
         } catch (error) {
-          console.log("error al enviar el correo", error);
+          console.log("Error al enviar el correo:", error);
         }
       };
+    
       const handleCloseModal = () => {
         setShowModal(false);
       };
