@@ -1,11 +1,6 @@
 import { Container } from "react-bootstrap";
 import { Fade } from "react-awesome-reveal";
 import { FaFacebook, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
-/* import Whatsapp from "../layouts/Whatsapp";
-  background-image: url("../src/assets/fondo1.jpeg");
-
-
- */
 
 const Home = () => {
   return (
@@ -63,8 +58,7 @@ const Home = () => {
               </li>
             </a>
           </ul>
-          {/*             <Whatsapp></Whatsapp>
-           */}
+          
         </Container>
       </Fade>
     </div>

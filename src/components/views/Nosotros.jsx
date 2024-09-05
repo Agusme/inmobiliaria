@@ -2,6 +2,8 @@
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { Fade } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
+import CountUp from 'react-countup';
+
 const Portada = ({id}) => {
   return (
     <Fade>
@@ -69,16 +71,18 @@ const Portada = ({id}) => {
               <Col lg={8} md={8} sm={12}>
                 <Row className="text-center mt-4">
                   <Col lg={4} md={5} sm={4}>
-                    <p className="fw-semibold fs-2 text-warning">+30</p>
+                    <CountUp end={30} duration={2} className="fw-semibold fs-2 text-warning" />
+  
                     <p>Años de experiencia</p>
                   </Col>
                   <Col lg={4} md={5} sm={4}>
-                    <p className="fw-semibold fs-2 text-warning">+1500</p>
+                    <CountUp end={1500} duration={2} className="fw-semibold fs-2 text-warning" />
+
                     <p>Propiedades vendidas</p>
                   </Col>
                   <Col lg={4} md={5} sm={4}>
-                    <p className="fw-semibold fs-2 text-warning">+2500</p>
-                    <p>Clientes felices</p>
+                  <CountUp end={3000} duration={2} className="fw-semibold fs-2 text-warning" />
+                  <p>Clientes felices</p>
                   </Col>
                 </Row>
               </Col>
