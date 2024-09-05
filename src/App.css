@@ -194,8 +194,9 @@ border-bottom: #1d32514d 1px solid;
 .carousel-casa img{
   height: 400px;
 }
-
-
+.logo-bmz-nuevo{
+width: 15vw;
+}
 @media all and (min-width: 480px) and (max-width: 768px) {
   .poppins-medium {
     font-family: "Poppins", sans-serif;
@@ -204,6 +205,10 @@ border-bottom: #1d32514d 1px solid;
     font-size: 4em;
   
   }
+.w-logo{
+  width: 30vh; 
+}
+
   .carousel-casa img{
     height: 300px;
   }
