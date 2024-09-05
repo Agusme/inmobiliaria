@@ -8,12 +8,15 @@
 }
 
 body {
-  background-image: url("../src/assets/fondo1.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   width: 100%;
 
+
+}
+.imgHome{
+  background-image: url("../src/assets/fondo1.jpeg");
 
 }
 .logo-navbar{
