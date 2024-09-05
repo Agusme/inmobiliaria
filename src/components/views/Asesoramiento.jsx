@@ -1,6 +1,6 @@
 import React from "react";
 import { Fade } from "react-awesome-reveal";
-import { Button, Container, Form, Modal } from "react-bootstrap";
+import { Button, Col, Container, Form, Modal, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import { validateMessage, validateName, validatePhone } from "../../helpers/validateForm";
@@ -49,17 +49,23 @@ const Asesoramiento = () => {
       };
     
   return (
-    <Fade>
-      <Container className="text-white vh-100 imgHome">
-        <h1 className="pt-5 pb-3 mt-5 text-center">Asesoramiento</h1>
+    <div className="imgHome py-5">
+ <Fade>
+      <Container className="text-white my-3 ">
+      <h1 className="py-5 text-center">Asesoramiento</h1>
 
-        <p className="fs-6 text-center my-3" >
-            
-        Como profesionales con una amplia trayectoria en el sector inmobiliario, ofrecemos asesoramiento especializado en bienes raíces.
-          ¡Dejanos tu consulta y en la brevedad nos ponemos en contacto con vos!
-        </p>
-        <Form onSubmit={handleSubmit(onSubmit)}>
-          <Form.Group controlId="formName">
+<Row>
+  <Col md={6} sm={6}><p className="fs-6" >
+    
+    Como profesionales con una amplia trayectoria en el sector inmobiliario, ofrecemos asesoramiento especializado en bienes raíces.
+      ¡Dejanos tu consulta y en la brevedad nos ponemos en contacto con vos!
+    </p></Col>
+  <Col  md={6} sm={6}><div className="d-flex justify-content-center">
+  
+  <div className="w-100 efect-glass rounded px-5 py-2">
+  
+  <Form onSubmit={handleSubmit(onSubmit)} >
+          <Form.Group controlId="formName" >
             <Form.Label>
               Nombre <span className="text-danger fw-bold">*</span>
             </Form.Label>
@@ -134,6 +140,12 @@ const Asesoramiento = () => {
             Enviar
           </Button>
         </Form>
+  </div>
+
+</div></Col>
+</Row>
+
+
         <Modal show={showModal} onHide={handleCloseModal}>
           <Modal.Header closeButton>
             <Modal.Title>Consulta Enviada!</Modal.Title>
@@ -146,6 +158,8 @@ const Asesoramiento = () => {
         </Modal>
       </Container>
     </Fade>
+    </div>
+   
   );
 };
 
