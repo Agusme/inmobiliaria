@@ -72,9 +72,9 @@ const PropertyEdit = ({ getProperties }) => {
   };
 
   return (
-    <div className="py-5 my-5">
+    <div className="imgHome py-5">
       <Container className="text-white text-center">
-        <h1>Editar Propiedad</h1>
+        <h1 className="mt-5">Editar Propiedad</h1>
         <hr />
         <Form onSubmit={handleSubmit(onSubmit)}>
           <Row>

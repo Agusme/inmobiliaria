@@ -2,59 +2,70 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import { Fade } from "react-awesome-reveal";
-import { Button, Container, Form, Modal } from "react-bootstrap";
-import { validateMessage, validateName, validatePhone } from "../../helpers/validateForm";
+import { Button, Col, Container, Form, Modal, Row } from "react-bootstrap";
+import {
+  validateMessage,
+  validateName,
+  validatePhone,
+} from "../../helpers/validateForm";
 
 const Venta = () => {
-    const {
-        register,
-        handleSubmit,
-        formState: { errors, isValid },
-        reset,
-      } = useForm();
-    
-      const [showModal, setShowModal] = React.useState(false);
-    
-      const emailjsConfig = {
-        serviceId: "service_qn846gq",
-        templateId: "template_lsp5hg6",
-        publicKey: "BDtEaJzGHui804FZE",
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isValid },
+    reset,
+  } = useForm();
+
+  const [showModal, setShowModal] = React.useState(false);
+  const emailjsConfig = {
+    serviceId: "service_n3v74fh",
+    templateId: "template_g7q28lw",
+    publicKey: "BDtEaJzGHui804FZE",
+  };
+
+  const onSubmit = async (data) => {
+    try {
+      const emailData = {
+        from_name: data.user_name, // Nombre del remitente (cliente)
+        reply_to: data.email, // Correo electrónico del remitente
+        phone: data.phone, // Teléfono del cliente
+        message: data.message, // Mensaje del cliente
       };
-    
-      const onSubmit = async (data) => {
-        try {
-          const emailData = {
-            ...data,
-            user_name: data.user_name,
-            phone: data.phone,
-            message: data.message,
-          };
-          const response = await emailjs.send(
-            emailjsConfig.serviceId,
-            emailjsConfig.templateId,
-            emailData,
-            emailjsConfig.publicKey
-          );
-          console.log("correo enviado con exito: ", response);
-    
-          setShowModal(true);
-          reset();
-        } catch (error) {
-          console.log("error al enviar el correo", error);
-        }
-      };
-      const handleCloseModal = () => {
-        setShowModal(false);
-      };
-    
+
+      const response = await emailjs.send(
+        emailjsConfig.serviceId,
+        emailjsConfig.templateId,
+        emailData,
+        emailjsConfig.publicKey
+      );
+      console.log("correo enviado con exito: ", response);
+
+      setShowModal(true);
+      reset();
+    } catch (error) {
+      console.log("error al enviar el correo", error);
+    }
+  };
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
   return (
     <Fade>
-      <Container className="text-white vh-100">
-        <h1 className="pt-5 pb-3 mt-5 text-center">¿Querés vender tu propiedad?</h1>
-
-        <p className="fs-6 text-center my-3" >
-          ¡Describe tu propiedad y en la brevedad nos ponemos en contacto con vos!
-        </p>
+    <div className="imgHome py-5">
+    <Container className="text-white">
+        <h1 className="pt-5 pb-3 text-center">
+          ¿Querés vender tu propiedad?
+        </h1>
+        <Row>
+          <Col md={6} sm={6}>
+          <p className="fs-6 my-3">
+            ¡Describe tu propiedad y en la brevedad nos ponemos en contacto con
+            vos!
+          </p>
+          </Col>
+        <Col md={6} sm={6}>
         <Form onSubmit={handleSubmit(onSubmit)}>
           <Form.Group controlId="formName">
             <Form.Label>
@@ -104,7 +115,8 @@ const Venta = () => {
 
           <Form.Group controlId="form-message">
             <Form.Label className="pt-3">
-              Describe tu propiedad<span className="text-danger fw-bold">*</span>
+              Describe tu propiedad
+              <span className="text-danger fw-bold">*</span>
             </Form.Label>
             <Form.Control
               name="message"
@@ -127,10 +139,14 @@ const Venta = () => {
               </Form.Control.Feedback>
             )}
           </Form.Group>
-          <Button type="submit" className="mt-3 btn btn-light">
+          <Button type="submit" className="mt-3 custom-btn  ">
             Enviar
           </Button>
         </Form>
+        </Col>
+        </Row>
+
+     
         <Modal show={showModal} onHide={handleCloseModal}>
           <Modal.Header closeButton>
             <Modal.Title>Consulta Enviada!</Modal.Title>
@@ -142,6 +158,7 @@ const Venta = () => {
           </Modal.Footer>
         </Modal>
       </Container>
+    </div>
     </Fade>
   );
 };
