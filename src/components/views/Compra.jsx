@@ -1,9 +1,7 @@
-import { Fade } from "react-awesome-reveal";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 const Compra = () => {
   return (
-    <Fade>
       <div  className="bg-white pb-5">
  
 
@@ -50,7 +48,6 @@ const Compra = () => {
           </Container>
         </Container>
       </div>
-    </Fade>
   );
 };
 

@@ -33,6 +33,7 @@ import DptoAlquiler from "./components/views/departamento/DptoAlquiler";
 import Local from "./components/views/local/Local";
 import LocalId from "./components/views/local/LocalId";
 import TerrenosLules from "./components/views/terrenos/TerrenosLules";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const [isAdmin, setIsAdmin] = useState(false);
@@ -56,6 +57,8 @@ function App() {
   return (
     <Router>
       <div>
+      <ScrollToTop />
+
         <Navegation />
         <Routes>
           <Route
