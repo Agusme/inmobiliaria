@@ -14,11 +14,25 @@ const CompraCasaID = () => {
   const URL = import.meta.env.VITE_API_BMZ;
   const { id } = useParams();
   const [property, setProperty] = useState(null);
+  const [autoPlay, setAutoPlay] = useState(true); // Por defecto, autoplay activado para pantallas grandes
 
   useEffect(() => {
     getOne();
-  }, []);
 
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setAutoPlay(false); // Desactiva autoplay en pantallas pequeñas
+      } else {
+        setAutoPlay(true); // Activa autoplay en pantallas grandes
+      }
+    };
+
+    handleResize(); // Ejecuta una vez para configurar el estado inicial
+
+    window.addEventListener("resize", handleResize); // Añade el listener de resize
+    return () => window.removeEventListener("resize", handleResize); // Limpia el listener al desmontar el componente
+  }, []);
+ 
   const getOne = async () => {
     try {
       const res = await axios.get(`${URL}/${id}`);
@@ -30,18 +44,20 @@ const CompraCasaID = () => {
 
   return (
     <div className="py-5">
-      <Container className="mt-5 d-flex justify-content-center align-items-center">
+      <Container className="mt-4 d-flex justify-content-center align-items-center">
         {property ? (
           <Container className="bg-white pb-5">
             <div className="px-lg-5 mx-lg-5 ">
-              <h2 className="letra-azul fs-3 py-2 display-5">
+              <h2 className="letra-azul  fs-3 py-2 display-5">
                 {property.location}
               </h2>
               <Carousel
                 showThumbs={true}
                 showStatus={false}
                 dynamicHeight={true}
-                autoPlay
+                infiniteLoop
+                autoPlay={autoPlay} // Controla el autoplay basado en el estado
+
                 thumbWidth={70}
                 className="carousel-principal px-lg-5 "
               >
