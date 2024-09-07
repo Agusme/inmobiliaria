@@ -42,7 +42,6 @@ const CompraCasaID = () => {
                 showStatus={false}
                 dynamicHeight={true}
                 autoPlay
-                infiniteLoop
                 thumbWidth={70}
                 className="carousel-principal px-lg-5 "
               >

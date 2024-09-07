@@ -1,11 +1,9 @@
 import { Container } from "react-bootstrap";
-import { Fade } from "react-awesome-reveal";
 import { FaFacebook, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
 
 const Home = () => {
   return (
     <div className=" text-white imgHome" id="home" >
-      <Fade duration={1500}>
         <Container className=" text-center centered-container ">
           <p className="pt-5 mt-5 mb-3 poppins-light fs-3">
             ¡Bienvenidos a nuestra Inmobiliaria!{" "}
@@ -60,7 +58,6 @@ const Home = () => {
           </ul>
           
         </Container>
-      </Fade>
     </div>
   );
 };

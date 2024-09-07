@@ -1,6 +1,7 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { FaFacebook, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import logoBmz from '../../assets/logoNuevoBlanco.png'
 
 const Footer = () => {
   return (
@@ -10,9 +11,10 @@ const Footer = () => {
         
         <Link to="/" className="text-decoration-none text-light">
 
-          <p className="d-inline-block align-top p-1 m-3 lead text-white bg-bordeau  linkhover">
-            BMZ{" "}
-          </p>
+        <div className="pt-3"> 
+         <img src={logoBmz} alt="bmz Logo" className= "logoNavbar p-2 linkhover" />
+
+         </div>
           </Link>
           <p>M.P. 111 | 112</p>
         </Col>

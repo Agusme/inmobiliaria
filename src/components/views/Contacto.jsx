@@ -6,7 +6,6 @@ import {
   validatePhone,
 } from "../../helpers/validateForm.jsx";
 import emailjs from "@emailjs/browser";
-import { Fade } from "react-awesome-reveal";
 
 import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
@@ -56,7 +55,6 @@ const Contacto = () => {
   };
 
   return (
-    <Fade>
       <div className="bg-contact text-white " id="contacto">
         <Container className="py-5">
           <h4 className="text-center display-4 pt-5">Contacto</h4>
@@ -190,7 +188,6 @@ const Contacto = () => {
           </Modal>
         </Container>
       </div>
-    </Fade>
   );
 };
 

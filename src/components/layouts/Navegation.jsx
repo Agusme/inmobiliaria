@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
+import logoBmz from '../../assets/logoNuevoBlanco.png'
 const Navegation = () => {
   const [expanded, setExpanded] = useState(false);
   const navbarRef = useRef(null);
@@ -37,7 +38,12 @@ const Navegation = () => {
         <Navbar.Brand>
           <ScrollLink to="home" smooth={true} duration={500}>
             <Link to="/" className="text-decoration-none">
-         <p className="text-white fs-3 bg-bordeau py-1 px-2  linkhover">BMZ </p>        </Link>
+         <div > 
+         <img src={logoBmz} alt="bmz Logo" className= "logoNavbar p-2 linkhover" />
+
+         </div>
+
+                </Link>
           </ScrollLink>
         </Navbar.Brand>
         <Navbar.Toggle
