@@ -2,15 +2,18 @@
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { Fade } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
-import CountUp from 'react-countup';
+import CountUp from "react-countup";
 
-const Portada = ({id}) => {
+const Portada = ({ id }) => {
   return (
     <Fade>
       <div id="nosotros">
         <Container fluid className="bg-white text-center pb-5">
           <Container className="py-5">
-            <h4 className="display-4 letra-azul py-5"> {id === "inicio" ? "¿Qué estás buscando?": "Nuestros Servicios"}</h4>
+            <h4 className="display-4 letra-azul py-5">
+              {" "}
+              {id === "inicio" ? "¿Qué estás buscando?" : "Nuestros Servicios"}
+            </h4>
             <Row>
               <Col lg={3} md={6} sm={6}>
                 <Link
@@ -71,18 +74,40 @@ const Portada = ({id}) => {
               <Col lg={8} md={8} sm={12}>
                 <Row className="text-center mt-4">
                   <Col lg={4} md={5} sm={4}>
-                    <CountUp end={30} duration={10} className="fw-semibold fs-2 text-warning" />
-  
+                    <div className="d-flex justify-content-center">
+                      <p className="fw-semibold fs-2 text-warning">+</p>
+                      <CountUp
+                        end={30}
+                        duration={10}
+                        className="fw-semibold fs-2 text-warning"
+                      />
+                    </div>
+
                     <p>Años de experiencia</p>
                   </Col>
                   <Col lg={4} md={5} sm={4}>
-                    <CountUp end={1500} duration={10} className="fw-semibold fs-2 text-warning" />
+                    <div className="d-flex justify-content-center">
+                      <p className="fw-semibold fs-2 text-warning">+</p>
+                      <CountUp
+                        end={1500}
+                        duration={10}
+                        className="fw-semibold fs-2 text-warning"
+                      />
+                    </div>
 
                     <p>Propiedades vendidas</p>
                   </Col>
                   <Col lg={4} md={5} sm={4}>
-                  <CountUp end={3000} duration={10} className="fw-semibold fs-2 text-warning" />
-                  <p>Clientes felices</p>
+                    <div className="d-flex justify-content-center">
+                      <p className="fw-semibold fs-2 text-warning">+</p>
+                      <CountUp
+                        end={3000}
+                        duration={10}
+                        className="fw-semibold fs-2 text-warning"
+                      />
+                    </div>
+
+                    <p>Clientes felices</p>
                   </Col>
                 </Row>
               </Col>
