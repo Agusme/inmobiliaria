@@ -44,7 +44,7 @@ const CompraCasaID = () => {
 
   return (
     <div className="py-5">
-      <Container className="mt-4 d-flex justify-content-center align-items-center">
+      <Container className="mt-5 d-flex justify-content-center align-items-center">
         {property ? (
           <Container className="bg-white pb-5">
             <div className="px-lg-5 mx-lg-5 ">
