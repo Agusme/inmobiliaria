@@ -6,7 +6,7 @@ import axios from "../../config/axiosInit";
 
 const searchProperties = async (typeTransaction, typeProperty) => {
   try {
-    const response = await axios.get(` https://backend-bmz.vercel.app/api/search`, {
+    const response = await axios.get(`https://backend-bmz.vercel.app/api/search`, {
       params: { typeTransaction, typeProperty },
     });
     return response.data;
