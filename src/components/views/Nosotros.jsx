@@ -3,6 +3,7 @@ import { Card, Col, Container, Row } from "react-bootstrap";
 import { Fade } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
 import CountUp from "react-countup";
+import SearchForm from "./SearchForm";
 
 const Portada = ({ id }) => {
   return (
@@ -55,6 +56,8 @@ const Portada = ({ id }) => {
                 </Card>
               </Col>
             </Row>
+            <SearchForm></SearchForm>
+
             <h4 className="letra-azul display-5 pt-5 pb-3">Nosotros</h4>
             <p className="py-2">
               Somos una inmobiliaria de confianza en Tucumán con años de
