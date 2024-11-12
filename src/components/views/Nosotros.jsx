@@ -1,11 +1,10 @@
 /* eslint-disable react/prop-types */
-import { Card, Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { Fade } from "react-awesome-reveal";
-import { Link } from "react-router-dom";
 import CountUp from "react-countup";
 import SearchForm from "./SearchForm";
 
-const Portada = ({ id }) => {
+const Portada = () => {
   return (
     <Fade>
       <div id="nosotros">
