@@ -3,7 +3,7 @@ import { FaFacebook, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
 
 const Home = () => {
   return (
-    <div className=" text-white imgHome" id="home" >
+    <div className=" text-white bg-imageCard1" id="home" >
         <Container className=" text-center centered-container ">
           <p className="pt-5 mt-5 mb-3 poppins-light fs-3">
             ¡Bienvenidos a nuestra Inmobiliaria!{" "}

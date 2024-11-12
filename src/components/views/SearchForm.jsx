@@ -4,6 +4,7 @@ import axios from "../../config/axiosInit";
 
 // Define la URL de la API
 const URL = import.meta.env.VITE_API_BMZ;
+console.log("URL de la API:", URL);
 
 const searchProperties = async (typeTransaction, typeProperty) => {
   try {
@@ -12,7 +13,7 @@ const searchProperties = async (typeTransaction, typeProperty) => {
     });
     return response.data;
   } catch (error) {
-    console.error("Error al buscar propiedades:", error);
+    console.error("Error al buscar propiedades:", error.response || error.message);
     throw error;
   }
 };
@@ -24,19 +25,22 @@ const SearchForm = () => {
   const [hasSearched, setHasSearched] = useState(false);
 
   const handleSearch = async () => {
+    console.log("typeTransaction:", typeTransaction);
+    console.log("typeProperty:", typeProperty);
     try {
       const results = await searchProperties(typeTransaction, typeProperty);
-      console.log(typeProperty)
+      console.log("Resultados de búsqueda:", results);
       setProperties(results);
       setHasSearched(true); // Marcar que se ha realizado una búsqueda
     } catch (error) {
+      console.error("Error al buscar propiedades:", error);
       alert("Hubo un error al buscar propiedades.");
     }
   };
 
   return (
     <div>
-      <Container className="bg-imageCard1 py-3 rounded"> 
+      <Container className="bg-imageCard1 mt-5 py-3 rounded"> 
         <div className="efect-glass py-5 rounded">
           <h4 className="text-white mb-4">Buscador de propiedades</h4>
           <Row className="d-flex justify-content-center align-content-center align-items-center">

@@ -55,7 +55,7 @@ const Contacto = () => {
   };
 
   return (
-      <div className="bg-contact text-white " id="contacto">
+      <div className="bg-imageCard1 text-white " id="contacto">
         <Container className="py-5">
           <h4 className="text-center display-4 pt-5">Contacto</h4>
           <Container>

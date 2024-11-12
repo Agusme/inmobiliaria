@@ -11,11 +11,13 @@ const Portada = ({ id }) => {
       <div id="nosotros">
         <Container fluid className="bg-white text-center pb-5">
           <Container className="py-5">
-            <h4 className="display-4 letra-azul py-5">
+     {/*        <h4 className="display-4 letra-azul py-3">
               {" "}
               {id === "inicio" ? "¿Qué estás buscando?" : "Nuestros Servicios"}
-            </h4>
-            <Row>
+            </h4> */}
+           
+            <SearchForm></SearchForm>
+           {/*  <Row className="mt-3">
               <Col lg={3} md={6} sm={6}>
                 <Link
                   to="/compra"
@@ -55,10 +57,8 @@ const Portada = ({ id }) => {
                   </Link>
                 </Card>
               </Col>
-            </Row>
-            <SearchForm></SearchForm>
-
-            <h4 className="letra-azul display-5 pt-5 pb-3">Nosotros</h4>
+            </Row> */}
+            <h4 className="letra-azul display-4 pt-5 pb-3">Nosotros</h4>
             <p className="py-2">
               Somos una inmobiliaria de confianza en Tucumán con años de
               experiencia en el mercado inmobiliario. Nuestro equipo altamente
