@@ -3,12 +3,10 @@ import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import axios from "../../config/axiosInit";
 
 // Define la URL de la API
-const URL = import.meta.env.VITE_API_BMZ;
-console.log("URL de la API:", URL);
 
 const searchProperties = async (typeTransaction, typeProperty) => {
   try {
-    const response = await axios.get(`${URL}/search`, {
+    const response = await axios.get(` https://backend-bmz.vercel.app/api/search`, {
       params: { typeTransaction, typeProperty },
     });
     return response.data;
