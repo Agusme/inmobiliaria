@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "../../../config/axiosInit"
-import {Badge, Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { Carousel } from 'react-responsive-carousel';
 import { TbBathFilled } from "react-icons/tb";
 import { IoBed, IoCallOutline } from "react-icons/io5";
@@ -32,9 +32,6 @@ const DptoAlquilerId = () => {
               <div className="px-lg-5 mx-lg-5 ">
                 <h2 className="letra-azul fs-3 py-2 display-5">
                   {property.location}
-                  <Badge bg="warning" className="m-3">
-    TEMPORARIO
-  </Badge>
                 </h2>
            
                 <Carousel
