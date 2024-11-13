@@ -46,8 +46,8 @@ const DptoAlquiler = ({ properties }) => {
                           <p className="text-center letra-azul">
                             <ImLocation className="me-1" />
                             {property.location}{" "}
-                            <Badge bg="warning ">TEMPORARIO</Badge>
-                          </p>
+                        
+                        </p>
 
                           <div className="d-flex justify-content-center align-items-center mb-4 flex-grow-1 ">
                             {property.bathroom >= 1 && (
