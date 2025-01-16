@@ -20,11 +20,11 @@ const DptoCompra = ({ properties }) => {
               (property) =>
                 property.typeTransaction === "Venta" &&
                 property.typeProperty === "Departamento" && (
-                  <Col key={property._id} lg={3} md={3} sm={6}>
-                    <Link to={`/compra-dpto-id/${property._id}`} className="text-decoration-none">
-                      <Card className="h-100 d-flex flex-column text-center card-houses border-0 rounded">
+                  <Col key={property._id} lg={3} md={3} sm={6} className="my-4">
+                    <Link to={`/compra-dpto-id/${property._id}`} className=" text-decoration-none">
+                      <Card className="h-100 d-flex flex-column text-center card-houses border-0 rounded ">
                         <img
-                          className="property-image text-center rounded-top "
+                          className="property-image text-center rounded-top"
                           src={
                             Array.isArray(property.images)
                               ? property.images[0]
